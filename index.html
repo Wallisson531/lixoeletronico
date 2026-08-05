@@ -4,89 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lixo eletrônico: o que acontece depois da coleta</title>
+<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #EDF1EF;
-    --surface: #FFFFFF;
-    --border: #D5DDD9;
-    --ink: #172420;
-    --ink-soft: #5B6B64;
-    --pcb: #2F6D4F;
-    --copper: #B5652D;
-    --hazard: #D9A02B;
-    --steel: #3D5A73;
-    --danger: #B23A2E;
-    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55; }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; }
-  a { color: var(--pcb); }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-  section { padding: 56px 0; }
-  .eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--pcb); margin-bottom: 8px; }
-
-  /* Hero */
-  .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 64px 0 48px; }
-  .hero h1 { font-size: 44px; line-height: 1.05; max-width: 720px; }
-  .hero p.lead { font-size: 17px; color: var(--ink-soft); max-width: 620px; margin-top: 16px; }
-  .hero-stat { display: inline-flex; align-items: baseline; gap: 10px; margin-top: 28px; background: #F3ECE3; border-left: 4px solid var(--copper); padding: 14px 20px; border-radius: 0 8px 8px 0; }
-  .hero-stat .num { font-family: var(--font-mono); font-size: 28px; font-weight: 500; color: var(--copper); }
-  .hero-stat .txt { font-size: 14px; color: var(--ink-soft); max-width: 320px; }
-
-  /* Stat grid */
-  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
-  .stat-card .num { font-family: var(--font-mono); font-size: 26px; font-weight: 500; }
-  .stat-card .label { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
-  .stat-card.c-pcb .num { color: var(--pcb); }
-  .stat-card.c-copper .num { color: var(--copper); }
-  .stat-card.c-hazard .num { color: var(--hazard); }
-  .stat-card.c-steel .num { color: var(--steel); }
-
-  /* Pipeline */
-  .conveyor { height: 3px; background-image: repeating-linear-gradient(90deg, var(--copper) 0 10px, transparent 10px 20px); margin: 28px 0 20px; }
-  .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .stage { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
-  .stage .n { width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--font-mono); font-size: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
-  .stage h3 { font-size: 17px; margin-bottom: 6px; }
-  .stage p { font-size: 13px; color: var(--ink-soft); margin: 0; }
-
-  /* Table */
-  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  th, td { text-align: left; padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-family: var(--font-display); font-size: 14px; font-weight: 600; background: #F7F9F7; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.03em; }
-  tr:last-child td { border-bottom: none; }
-  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
-  .tag-pcb { background: #2F6D4F1A; color: var(--pcb); }
-  .tag-copper { background: #B5652D1A; color: var(--copper); }
-  .tag-hazard { background: #D9A02B1A; color: #8a6c1e; }
-  .tag-steel { background: #3D5A731A; color: var(--steel); }
-
-  /* Law + survey */
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .bar-row { margin-bottom: 12px; }
-  .bar-row .top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
-  .bar-track { background: #E4E9E6; border-radius: 6px; height: 10px; overflow: hidden; }
-  .bar-fill { height: 100%; background: var(--pcb); border-radius: 6px; }
-
-  footer { padding: 32px 0 56px; border-top: 1px solid var(--border); }
-  footer h3 { font-size: 15px; margin-bottom: 10px; }
-  footer ol { padding-left: 20px; font-size: 12px; color: var(--ink-soft); }
-  footer li { margin-bottom: 4px; }
-
-  @media (max-width: 860px) {
-    .stat-grid, .pipeline, .two-col { grid-template-columns: 1fr 1fr; }
-    .hero h1 { font-size: 32px; }
-  }
-  @media (max-width: 560px) {
-    .stat-grid, .pipeline, .two-col { grid-template-columns: 1fr; }
-  }
+ 
 </style>
 </head>
 <body>
