@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lixo eletrônico: o que acontece depois da coleta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EDF1EF;
+    --surface: #FFFFFF;
+    --border: #D5DDD9;
+    --ink: #172420;
+    --ink-soft: #5B6B64;
+    --pcb: #2F6D4F;
+    --copper: #B5652D;
+    --hazard: #D9A02B;
+    --steel: #3D5A73;
+    --danger: #B23A2E;
+    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.55; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; }
+  a { color: var(--pcb); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0; }
+  .eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--pcb); margin-bottom: 8px; }
+
+  /* Hero */
+  .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 64px 0 48px; }
+  .hero h1 { font-size: 44px; line-height: 1.05; max-width: 720px; }
+  .hero p.lead { font-size: 17px; color: var(--ink-soft); max-width: 620px; margin-top: 16px; }
+  .hero-stat { display: inline-flex; align-items: baseline; gap: 10px; margin-top: 28px; background: #F3ECE3; border-left: 4px solid var(--copper); padding: 14px 20px; border-radius: 0 8px 8px 0; }
+  .hero-stat .num { font-family: var(--font-mono); font-size: 28px; font-weight: 500; color: var(--copper); }
+  .hero-stat .txt { font-size: 14px; color: var(--ink-soft); max-width: 320px; }
+
+  /* Stat grid */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .stat-card .num { font-family: var(--font-mono); font-size: 26px; font-weight: 500; }
+  .stat-card .label { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+  .stat-card.c-pcb .num { color: var(--pcb); }
+  .stat-card.c-copper .num { color: var(--copper); }
+  .stat-card.c-hazard .num { color: var(--hazard); }
+  .stat-card.c-steel .num { color: var(--steel); }
+
+  /* Pipeline */
+  .conveyor { height: 3px; background-image: repeating-linear-gradient(90deg, var(--copper) 0 10px, transparent 10px 20px); margin: 28px 0 20px; }
+  .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stage { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .stage .n { width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: #fff; font-family: var(--font-mono); font-size: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .stage h3 { font-size: 17px; margin-bottom: 6px; }
+  .stage p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-family: var(--font-display); font-size: 14px; font-weight: 600; background: #F7F9F7; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.03em; }
+  tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .tag-pcb { background: #2F6D4F1A; color: var(--pcb); }
+  .tag-copper { background: #B5652D1A; color: var(--copper); }
+  .tag-hazard { background: #D9A02B1A; color: #8a6c1e; }
+  .tag-steel { background: #3D5A731A; color: var(--steel); }
+
+  /* Law + survey */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .bar-row { margin-bottom: 12px; }
+  .bar-row .top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
+  .bar-track { background: #E4E9E6; border-radius: 6px; height: 10px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--pcb); border-radius: 6px; }
+
+  footer { padding: 32px 0 56px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 15px; margin-bottom: 10px; }
+  footer ol { padding-left: 20px; font-size: 12px; color: var(--ink-soft); }
+  footer li { margin-bottom: 4px; }
+
+  @media (max-width: 860px) {
+    .stat-grid, .pipeline, .two-col { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 32px; }
+  }
+  @media (max-width: 560px) {
+    .stat-grid, .pipeline, .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Pesquisa · Lixo eletrônico</div>
+    <h1>O que acontece com o lixo eletrônico depois que ele é coletado?</h1>
+    <p class="lead">Do ponto de coleta até o destino final: como funciona o processo de triagem, desmontagem e reciclagem dos resíduos eletroeletrônicos no Brasil — e por que a maior parte ainda não chega lá.</p>
+    <div class="hero-stat">
+      <span class="num">2,4 mi t</span>
+      <span class="txt">de lixo eletrônico gerados por ano no Brasil — mas apenas cerca de <strong>3%</strong> são reciclados corretamente.</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Panorama</div>
+    <h2 style="font-size:26px; margin-bottom: 20px;">A dimensão do problema</h2>
+    <div class="stat-grid">
+      <div class="stat-card c-copper">
+        <div class="num">62 mi t</div>
+        <div class="label">de e-lixo gerados no mundo em 2022 — 82% a mais que em 2010 (ONU, Monitor Global de E-lixo)</div>
+      </div>
+      <div class="stat-card c-steel">
+        <div class="num">2,4 mi t</div>
+        <div class="label">gerados por ano no Brasil — 5º maior gerador do mundo, 2º das Américas, atrás só dos EUA</div>
+      </div>
+      <div class="stat-card c-hazard">
+        <div class="num">22,3%</div>
+        <div class="label">do e-lixo mundial é formalmente coletado e reciclado — projeção é cair para 20% até 2030</div>
+      </div>
+      <div class="stat-card c-pcb">
+        <div class="num">~3%</div>
+        <div class="label">é o percentual reciclado corretamente no Brasil, segundo levantamentos do setor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="eyebrow">Passo a passo</div>
+    <h2 style="font-size:26px; margin-bottom: 4px;">O caminho depois da coleta</h2>
+    <p style="color: var(--ink-soft); font-size: 14px; margin-top: 4px;">Da chegada ao centro de triagem até a matéria-prima reaproveitada pela indústria.</p>
+    <div class="conveyor"></div>
+    <div class="pipeline">
+      <div class="stage">
+        <div class="n">1</div>
+        <h3>Recebimento &amp; triagem</h3>
+        <p>Os equipamentos chegam a pontos de coleta, cooperativas ou centrais de logística reversa e são separados por tipo: informática, linha branca, telecom, pilhas e baterias.</p>
+      </div>
+      <div class="stage">
+        <div class="n">2</div>
+        <h3>Desmontagem</h3>
+        <p>Cada aparelho é desmontado — manualmente ou com máquinas — separando plásticos, metais, vidros, placas de circuito e baterias.</p>
+      </div>
+      <div class="stage">
+        <div class="n">3</div>
+        <h3>Processamento dos materiais</h3>
+        <p>Cada material segue uma rota própria de tratamento: fundição de metais, trituração de plásticos, ou processos químicos e térmicos para extrair metais das placas.</p>
+      </div>
+      <div class="stage">
+        <div class="n">4</div>
+        <h3>Destinação final</h3>
+        <p>Reciclagem industrial (retorna como matéria-prima), reuso e reforma de peças, ou descarte especial dos resíduos tóxicos que não podem ser recuperados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Destino por material</div>
+    <h2 style="font-size:26px; margin-bottom: 20px;">Para onde vai cada tipo de resíduo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>O que é feito com ele</th>
+          <th>Destino final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-steel">Metais</span><br/>Ferro, cobre, alumínio</td>
+          <td>Separados manualmente na desmontagem e enviados para fundição</td>
+          <td>Reaproveitados como matéria-prima pela indústria metalúrgica</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-copper">Plásticos</span></td>
+          <td>Triturados e granulados por tipo de polímero</td>
+          <td>Viram matéria-prima para novos produtos plásticos</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-steel">Vidro</span><br/>Telas e monitores</td>
+          <td>Triturado e separado conforme o tipo de vidro</td>
+          <td>Reciclagem em novas telas ou uso na construção civil</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pcb">Placas de circuito</span></td>
+          <td>Passam por processos químicos (lixiviação) ou térmicos (pirometalurgia) para extrair os metais</td>
+          <td>Recuperação de ouro, prata, cobre e paládio — no Brasil, muitas vezes enviadas a recicladoras especializadas no exterior, por falta de tecnologia local</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-hazard">Pilhas e baterias</span></td>
+          <td>Trituração seguida de tratamento térmico em fornos industriais</td>
+          <td>Recuperação de chumbo, níquel e zinco; resíduos tóxicos são neutralizados</td>
+        </tr>
+        <tr>
+          <td>Componentes irrecuperáveis</td>
+          <td>Separados como rejeito na triagem final</td>
+          <td>Descarte especial em aterros licenciados para resíduos perigosos</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="eyebrow">Quem faz em Cascavel/PR</div>
+    <h2 style="font-size:26px; margin-bottom: 6px;">De quem coleta a quem dá o destino final</h2>
+    <p style="color: var(--ink-soft); font-size: 14px; margin: 4px 0 20px;">Entidades e empresas identificadas na cidade que atuam em cada etapa do processo — do ponto de entrega até o processamento do material.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Etapa</th>
+          <th>Quem faz</th>
+          <th>Papel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-steel">1 · Coleta</span></td>
+          <td>Ecoponto da Manaus (parceria Prefeitura + Green Eletron)</td>
+          <td>Ponto de entrega voluntária gratuita de eletroeletrônicos e pilhas</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-steel">1 · Coleta</span></td>
+          <td>Pontos Green Eletron — Casas Bahia (Av. Brasil, 3414 e 3300) e Supermercado Angeloni (Av. Adv. Horácio Raccanello Filho, 5120)</td>
+          <td>Coletores de eletroeletrônicos e pilhas em pontos comerciais</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-steel">1 · Coleta</span></td>
+          <td>Secretaria Municipal do Meio Ambiente</td>
+          <td>Coleta agendada gratuita de eletrônicos e móveis (tel. 3902-1392 / 3902-1383 e WhatsApp)</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pcb">2 · Triagem</span></td>
+          <td>Ecopontos municipais — bairros Cascavel Velho, Brasília, Santa Cruz e Melissa</td>
+          <td>Centros de seleção e processamento de materiais recicláveis</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-pcb">2 · Triagem</span></td>
+          <td>Cooperativas COOPERPALMEIRAS e COOPERCANÇÃO</td>
+          <td>Recebem o e-lixo, fazem a triagem e o encaminham para destinação</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-copper">3 · Processamento local</span></td>
+          <td>Metais Cascavel</td>
+          <td>Compra e recicla metais ferrosos e não ferrosos — alumínio, cobre, latão, ferro e baterias</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-hazard">4 · Destinação final</span></td>
+          <td>Green Eletron (gestora nacional de logística reversa)</td>
+          <td>Coordena o envio do material triado em Cascavel às recicladoras homologadas — inclusive fora do estado, para itens como placas com metais preciosos</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 12px; color: var(--ink-soft); margin-top: 12px;">Não encontrei, nas fontes disponíveis, uma indústria recicladora de grande porte instalada em Cascavel capaz de fazer a extração final de metais preciosos de placas de circuito — essa etapa mais técnica costuma ser feita fora do município, muitas vezes em outros estados ou no exterior.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Em números</div>
+    <h2 style="font-size:26px; margin-bottom: 20px;">Materiais recuperados no Brasil em 2025</h2>
+    <div class="card">
+      <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 16px;">Do total processado pela Green Eletron em 2025 (12,5 mil toneladas coletadas), o que foi recuperado por tipo de material:</p>
+      <svg viewBox="0 0 640 260" width="100%" height="260" role="img" aria-label="Gráfico de barras dos materiais recuperados em toneladas">
+        <!-- eixo -->
+        <line x1="90" y1="10" x2="90" y2="220" stroke="#D5DDD9" stroke-width="1"/>
+        <line x1="90" y1="220" x2="620" y2="220" stroke="#D5DDD9" stroke-width="1"/>
+        <!-- barras: plástico 85, ferro 75, cobre 32, alumínio 20, vidro 14, outros 47 -->
+        <!-- escala: 85t = altura máx 190px -->
+        <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#172420">
+          <rect x="110" y="220" width="70" height="0" fill="none"/>
+          <rect x="110" y="30" width="70" height="190" fill="#B5652D" rx="3"/>
+          <text x="145" y="24" text-anchor="middle" font-weight="500">85t</text>
+          <text x="145" y="238" text-anchor="middle" fill="#5B6B64">Plástico</text>
+
+          <rect x="200" y="52" width="70" height="168" fill="#3D5A73" rx="3"/>
+          <text x="235" y="46" text-anchor="middle" font-weight="500">75t</text>
+          <text x="235" y="238" text-anchor="middle" fill="#5B6B64">Ferro</text>
+
+          <rect x="290" y="145" width="70" height="75" fill="#3D5A73" rx="3"/>
+          <text x="325" y="139" text-anchor="middle" font-weight="500">32t</text>
+          <text x="325" y="238" text-anchor="middle" fill="#5B6B64">Cobre</text>
+
+          <rect x="380" y="173" width="70" height="47" fill="#3D5A73" rx="3"/>
+          <text x="415" y="167" text-anchor="middle" font-weight="500">20t</text>
+          <text x="415" y="238" text-anchor="middle" fill="#5B6B64">Alumínio</text>
+
+          <rect x="470" y="187" width="70" height="33" fill="#4A7A78" rx="3"/>
+          <text x="505" y="181" text-anchor="middle" font-weight="500">14t</text>
+          <text x="505" y="238" text-anchor="middle" fill="#5B6B64">Vidro</text>
+
+          <rect x="560" y="115" width="60" height="105" fill="#D9A02B" rx="3"/>
+          <text x="590" y="109" text-anchor="middle" font-weight="500">47t</text>
+          <text x="590" y="238" text-anchor="middle" fill="#5B6B64">Outros*</text>
+        </g>
+      </svg>
+      <p style="font-size: 11px; color: var(--ink-soft); margin: 4px 0 0;">*Inclui metais nobres e preciosos, como ouro, prata e paládio recuperados das placas de circuito.</p>
+    </div>
+
+    <div class="two-col" style="margin-top: 16px;">
+      <div class="card" style="text-align: center;">
+        <h3 style="font-size: 15px; margin-bottom: 12px;">Taxa de reciclagem formal — Brasil</h3>
+        <svg viewBox="0 0 160 160" width="160" height="160">
+          <g transform="translate(80,80) rotate(-90)">
+            <circle r="60" cx="0" cy="0" fill="none" stroke="#E4E9E6" stroke-width="20"/>
+            <circle r="60" cx="0" cy="0" fill="none" stroke="#B5652D" stroke-width="20" stroke-dasharray="11.3 365.9"/>
+          </g>
+          <text x="80" y="86" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" fill="#172420">3%</text>
+        </svg>
+        <p style="font-size: 12px; color: var(--ink-soft); margin-top: 8px;">reciclado corretamente — o restante ainda não tem destinação formal</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 style="font-size: 15px; margin-bottom: 12px;">Taxa de reciclagem formal — mundo</h3>
+        <svg viewBox="0 0 160 160" width="160" height="160">
+          <g transform="translate(80,80) rotate(-90)">
+            <circle r="60" cx="0" cy="0" fill="none" stroke="#E4E9E6" stroke-width="20"/>
+            <circle r="60" cx="0" cy="0" fill="none" stroke="#2F6D4F" stroke-width="20" stroke-dasharray="84 293.2"/>
+          </g>
+          <text x="80" y="86" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="22" fill="#172420">22,3%</text>
+        </svg>
+        <p style="font-size: 12px; color: var(--ink-soft); margin-top: 8px;">coletado e reciclado formalmente — projeção é cair para 20% até 2030</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="card">
+        <div class="eyebrow">Legislação</div>
+        <h3 style="font-size: 19px; margin-bottom: 10px;">O que diz a lei brasileira</h3>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 10px;">A Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010) obriga fabricantes, importadores, distribuidores e comerciantes a manter um sistema de <strong>logística reversa</strong> para os eletroeletrônicos.</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 10px;">Para 2025, o setor precisa coletar de volta <strong>17%</strong> dos produtos que colocou no mercado.</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0;">Descartar eletrônicos no lixo comum é considerado crime ambiental pela Lei nº 9.605/1998, com previsão de multa e reclusão.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Na prática</div>
+        <h3 style="font-size: 19px; margin-bottom: 10px;">Um exemplo real de recuperação</h3>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 10px;">Em 2025, a entidade gestora Green Eletron recolheu <strong>12,5 mil toneladas</strong> de eletrônicos no Brasil. Do material processado, foram recuperados:</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin: 0;">85 t de plástico · 75 t de ferro · 32 t de cobre · 20 t de alumínio · 14 t de vidro · 47 t de outros materiais, incluindo metais nobres e preciosos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Comportamento do consumidor</div>
+    <h2 style="font-size:26px; margin-bottom: 6px;">O que os brasileiros fazem com seus eletrônicos usados</h2>
+    <p style="color: var(--ink-soft); font-size: 14px; margin-top: 4px 0 20px;">Pesquisa encomendada pela Samsung à MindMiners, entre pessoas que já têm o hábito de separar lixo reciclável.</p>
+    <div class="card" style="margin-top: 16px;">
+      <div class="bar-row">
+        <div class="top"><span>Consideram a reciclagem importante ou muito importante</span><strong>94%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width: 94%; background: var(--pcb);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>Destinam corretamente seus eletroeletrônicos</span><strong>62%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width: 62%; background: var(--pcb);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>Doam a terceiros os aparelhos que ainda funcionam</span><strong>38%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width: 38%; background: var(--steel);"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>Vendem ou descartam em locais apropriados</span><strong>29%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width: 29%; background: var(--steel);"></div></div>
+      </div>
+      <div class="bar-row" style="margin-bottom: 0;">
+        <div class="top"><span>Guardam para uma ocasião de uso emergencial</span><strong>24%</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width: 24%; background: var(--copper);"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h3>Fontes consultadas</h3>
+    <ol>
+      <li>ONU — Monitor Global de E-lixo (Global E-Waste Monitor), 2024</li>
+      <li>Brasil de Fato — "Brasil é 5º país que mais gera lixo eletrônico, mas só 3% é descartado corretamente" (2024/2025)</li>
+      <li>Ecolibra — "Brasil e o lixo eletrônico: 2,4 milhões de toneladas por ano e apenas 3% recicladas" (2026)</li>
+      <li>Green Eletron — "Tudo o que você precisa saber sobre a logística reversa de eletroeletrônicos e pilhas"</li>
+      <li>Samsung Newsroom Brasil — pesquisa encomendada à MindMiners sobre reciclagem de eletroeletrônicos (2022)</li>
+      <li>Ecobraz — "Lixo eletrônico no Brasil: números atualizados 2025" (dados SINIR/Ministério do Meio Ambiente)</li>
+      <li>eCycle — "Reciclagem de eletrônicos: como descartar e reaproveitar"</li>
+      <li>Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos) e Lei nº 9.605/1998 (Crimes Ambientais)</li>
+    </ol>
+  </div>
+</footer>
+
+</body>
+</html>
