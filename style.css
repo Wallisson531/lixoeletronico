@@ -21,6 +21,126 @@
   section { padding: 56px 0; }
   .eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--pcb); margin-bottom: 8px; }
 
+  /*NAVBAR*/
+/* =========================
+   NAVBAR PREMIUM
+========================= */
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,.85);
+
+    border-bottom: 1px solid var(--border);
+
+    transition: .3s;
+}
+
+.nav-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:74px;
+}
+
+/* LOGO */
+
+.brand{
+    text-decoration:none;
+    color:var(--ink);
+}
+
+.brand-top{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--pcb);
+}
+
+.brand-name{
+    font-family:var(--font-display);
+    font-size:28px;
+    line-height:1;
+    font-weight:700;
+}
+
+/* LINKS */
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:var(--ink-soft);
+
+    font-size:14px;
+    font-weight:500;
+
+    padding:10px 14px;
+    border-radius:8px;
+
+    transition:.25s;
+}
+
+.nav-menu a:hover{
+    background:#fff;
+    color:var(--pcb);
+}
+
+/* LINK ATIVO */
+
+.nav-menu a.active{
+    background:#2F6D4F12;
+    color:var(--pcb);
+}
+
+/* BOTÃO */
+
+.nav-cta{
+    margin-left:10px;
+
+    background:var(--pcb);
+    color:#fff !important;
+
+    border-radius:8px;
+    padding:10px 18px !important;
+
+    font-weight:600;
+
+    box-shadow:
+        0 4px 12px rgba(47,109,79,.18);
+}
+
+.nav-cta:hover{
+    background:#265640 !important;
+    color:#fff !important;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-content{
+        flex-direction:column;
+        height:auto;
+        padding:14px 0;
+        gap:16px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
   /* Hero */
   .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 64px 0 48px; }
   .hero h1 { font-size: 44px; line-height: 1.05; max-width: 720px; }
