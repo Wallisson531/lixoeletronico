@@ -221,3 +221,10 @@
     z-index: 9999;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
+footer {
+    background-color: rgba(211, 211, 211, 0.281);
+    padding: 10px;
+    color: black;
+    text-align: center;
+}
