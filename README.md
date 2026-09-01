@@ -128,7 +128,7 @@ A pesquisa evidencia que o descarte correto do lixo eletrônico é uma responsab
 
 Conhecer o caminho percorrido pelos resíduos eletrônicos é fundamental para reduzir impactos ambientais, incentivar a reciclagem e promover o reaproveitamento de recursos naturais
 
-Acesse o site aqui: https://wallisson531.github.io/lixoeletronico/
+Acesse o site aqui: https://lixoeletronico-two.vercel.app/
 
 ---
 
