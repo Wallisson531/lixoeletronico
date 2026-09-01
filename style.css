@@ -62,7 +62,6 @@ section {
 
 /*NAVBAR*/
 .navbar {
-    padding: 10px;
     position: sticky;
     top: 0px;
     z-index: 9999;
