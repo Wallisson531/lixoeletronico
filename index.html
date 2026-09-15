@@ -22,9 +22,15 @@
             <div class="brand-name">Beyond Collection</div>
         </a>
 
-        <nav class="nav-menu" aria-label="Navegação principal">
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu" aria-label="Navegação principal">
             <a href="#projeto">Projeto</a>
-            <a href="#lixo-eletronico">O que é lixo eletrônico</a>
+            <a href="#lixo-eletronico">Pesquisa</a>
             <a href="#equipamentos">Equipamentos</a>
             <a href="#materiais">Materiais recuperáveis</a>
             <a href="#galeria">Galeria</a>
@@ -44,13 +50,11 @@
 
         <p class="lead">
             Vivemos em uma sociedade cada vez mais conectada. Celulares, computadores, videogames,
-            eletrodomésticos e outros equipamentos eletrônicos fazem parte da nossa rotina. <strong>
-                Mas existe uma
-                pergunta que ainda precisa ser feita
-            </strong>.<br><br>
-        <p>
-            <strong>O que acontece com esses equipamentos quando deixam de ser utilizados?</strong>
-        </p>
+            eletrodomésticos e outros equipamentos eletrônicos fazem parte da nossa rotina. Mas existe uma
+            pergunta que ainda precisa ser feita:<br><br> <strong>
+                o que acontece com esses equipamentos quando deixam de ser
+                utilizados?
+            </strong>
         </p>
 
         <div class="hero-actions">
@@ -88,24 +92,21 @@
             <div class="card">
                 <h3>O que fazemos</h3>
                 <p>
-                    Queremos compreender, informar e conscientizar.
-                <p>
-                    Acreditamos que o descarte consciente começa antes da lixeira.</p>
-                <p>
-                    Começa quando entendemos que aquilo que nao utilizamos pode ter outro destino.</p>
+                    Informamos sobre lixo eletrônico, organizamos ações de coleta e indicamos pontos de entrega
+                    voluntária para que os aparelhos sigam para a logística reversa em vez do lixo comum.
                 </p>
             </div>
 
             <div class="card">
                 <h3>Quem participa</h3>
                 <p>
-                    Participantes do projeto são os estudantes do curso de <strong>TADS</strong> da Univel:
+                    Participantes do projeto são os estudantes do curso de TADS da Univel:
                 </p>
                 <ul class="lista-check">
-                    <li><strong><abbr title="Gestora do Projeto.">Deysi Coutinho</abbr></strong></li>
-                    <li><strong>Wallisson Daniel</strong></li>
-                    <li><strong><abbr title="Redatora">Ana Luiza</abbr></strong></li>
-                    <li><strong>José Henrique</strong></li>
+                    <li>Deysi Coutinho</li>
+                    <li>Wallisson Daniel</li>
+                    <li>Ana Luiza</li>
+                    <li>José Henrique</li>
                 </ul>
             </div>
 
@@ -114,10 +115,10 @@
                 <p>
                     A ideia é um projeto acadêmico para a matéria de PI — Comunicação como Ferramenta de Comunicação,
                     ministrada pelo professor Lucas.
-                </p><br>
+                </p>
                 <p>
                     A proposta da disciplina é usar a comunicação para gerar mudança de comportamento. O tema escolhido
-                    foi o <strong>Lixo eletrônico Apos a Coleta</strong>, por ser um resíduo presente em todas as casas e, ainda assim, pouco
+                    foi o lixo eletrônico, por ser um resíduo presente em todas as casas e, ainda assim, pouco
                     compreendido.
                 </p>
             </div>
@@ -162,7 +163,7 @@
             <p class="eyebrow">Pesquisa</p>
             <h2>O que é lixo eletrônico</h2>
             <p>
-                Lixo eletrônico, o lixo ou REEE (Resíduos de Equipamentos Eletroeletrônicos) é todo produto que
+                Lixo eletrônico, e-lixo ou REEE (Resíduos de Equipamentos Eletroeletrônicos) é todo produto que
                 depende de corrente elétrica, pilha ou bateria para funcionar e chegou ao fim da vida útil — esteja
                 quebrado, obsoleto ou apenas sem uso. É a definição adotada pelo relatório Global E-waste Monitor,
                 da ONU, e pela Política Nacional de Resíduos Sólidos no Brasil.
@@ -209,6 +210,25 @@
                     No Brasil, a média é de cerca de
                     <span class="fonte-ref" tabindex="0" data-fonte="Estimativas a partir do The Global E-waste Monitor 2024 (UNITAR), divulgadas na imprensa brasileira.">10 kg de e-lixo por habitante ao ano</span>.
                 </p>
+            </div>
+        </div>
+
+        <div class="two-col" style="margin-top: 14px;">
+            <div class="stat-card c-steel">
+                <div class="num">7,3 kg</div>
+                <div class="label">
+                    foi a média de lixo eletrônico descartada em 2019 para cada homem, mulher e criança na Terra
+                    <span class="fonte-ref" tabindex="0" data-fonte="ITU. Global E-waste Monitor 2020: e-waste rising five times faster than documented e-waste recycling. Genebra: International Telecommunication Union, 2020. Disponível em: itu.int. Acesso em: 15 set. 2026.">(ITU, 2020)</span>.
+                </div>
+            </div>
+
+            <div class="stat-card c-hazard">
+                <div class="num">US$ 10 bi</div>
+                <div class="label">
+                    era o valor estimado em materiais recuperáveis embutido nos itens descartados corretamente naquele
+                    ano
+                    <span class="fonte-ref" tabindex="0" data-fonte="ITU. Global E-waste Monitor 2020: e-waste rising five times faster than documented e-waste recycling. Genebra: International Telecommunication Union, 2020. Disponível em: itu.int. Acesso em: 15 set. 2026.">(ITU, 2020)</span>.
+                </div>
             </div>
         </div>
 
@@ -438,6 +458,43 @@
             </table>
         </div>
 
+        <div class="card destaque-final" style="margin-top: 20px;">
+            <h3>Mineração urbana: o exemplo do ouro</h3>
+            <p>
+                A mineração urbana mostra como o descarte correto preserva recursos que, de outra forma, viriam
+                direto da natureza. Ao reciclar um lote de 10 mil smartphones, recuperam-se cerca de 300 gramas de
+                ouro puro extraídos de suas placas de circuito
+                <span class="fonte-ref" tabindex="0" data-fonte="UNITED NATIONS UNIVERSITY (UNU); UNITED NATIONS INSTITUTE FOR TRAINING AND RESEARCH (UNITAR). The Global E-waste Monitor 2024. Geneva/Bonn: UNU/UNITAR, 2024. Disponível em: ewastemonitor.info. Acesso em: 15 set. 2026.">(UNU; UNITAR, 2024)</span>.
+                Na mineração tradicional, produzir apenas 9,4 gramas de ouro — o peso de uma aliança — exige
+                fragmentar e tratar quimicamente 18 toneladas de rocha matriz
+                <span class="fonte-ref" tabindex="0" data-fonte="EARTHWORKS. How the 20 tons of mine waste per gold ring figure was calculated. Washington, DC: Earthworks, [2023]. Disponível em: earthworks.org. Acesso em: 15 set. 2026.">(EARTHWORKS, 2023)</span>.
+            </p>
+
+            <div class="three-col" style="margin-top: 14px;">
+                <div class="stat-card c-hazard">
+                    <div class="num">300 g</div>
+                    <div class="label">de ouro puro recuperados ao reciclar 10 mil smartphones</div>
+                </div>
+
+                <div class="stat-card c-copper">
+                    <div class="num">18 t</div>
+                    <div class="label">de rocha fragmentada e tratada com químicos para extrair 9,4 g de ouro na mineração tradicional</div>
+                </div>
+
+                <div class="stat-card c-pbc">
+                    <div class="num">≈ 574 t</div>
+                    <div class="label">de rocha nativa deixam de ser destruídas ao reciclar esse mesmo lote de celulares</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 14px; font-size: 15px; color: var(--ink-soft);">
+                A conta é direta: reciclar preserva a mesma quantidade de ouro sem repetir o impacto da extração —
+                sem fragmentar rocha e sem substâncias tóxicas como o cianeto, usadas na mineração tradicional
+                <span class="fonte-ref" tabindex="0" data-fonte="EARTHWORKS. Environmental Impacts of Gold Mining. Washington, DC: Earthworks, 2023. Disponível em: earthworks.org. Acesso em: 15 set. 2026.">(EARTHWORKS, 2023)</span>,
+                o que consolida a economia circular como pilar da sustentabilidade.
+            </p>
+        </div>
+
         <div class="alerta">
             A recuperação desses metais evita nova mineração: segundo a ONU, reciclar todo o e-lixo gerado em 2022
             <span class="fonte-ref" tabindex="0" data-fonte="Global E-waste Monitor 2024 (ONU): a reciclagem do e-lixo gerado em 2022 evitaria a extração de 900 milhões de toneladas de minério.">pouparia 900 milhões de toneladas de minério</span>.
@@ -459,7 +516,7 @@
 
         <div class="galeria-grid">
             <div class="galeria-card">
-                <img src="imagem/01-recebimento.jpg" alt="Contentor metálico e sacos acumulados com equipamentos eletrônicos recebidos" loading="lazy">
+                <img src="imagens/01-recebimento.jpg" alt="Contentor metálico e sacos acumulados com equipamentos eletrônicos recebidos" loading="lazy">
                 <div class="galeria-content">
                     <h3>O ponto de chegada</h3>
                     <p>É aqui que o aparelho descartado corretamente termina: acumulado para triagem, e não no aterro.</p>
@@ -467,7 +524,7 @@
             </div>
 
             <div class="galeria-card">
-                <img src="imagem/02-triagem.jpg" alt="Prateleiras do galpão com telas e monitores embalados e caixas plásticas organizadas" loading="lazy">
+                <img src="imagens/02-triagem.jpg" alt="Prateleiras do galpão com telas e monitores embalados e caixas plásticas organizadas" loading="lazy">
                 <div class="galeria-content">
                     <h3>Separado por tipo</h3>
                     <p>Telas, caixas e componentes ficam divididos por categoria — cada grupo segue um tratamento diferente.</p>
@@ -475,7 +532,7 @@
             </div>
 
             <div class="galeria-card">
-                <img src="imagem/03-desmontagem.jpg" alt="Trabalhador desmontando equipamentos eletrônicos em bancada com ferramentas" loading="lazy">
+                <img src="imagens/03-desmontagem.jpg" alt="Trabalhador desmontando equipamentos eletrônicos em bancada com ferramentas" loading="lazy">
                 <div class="galeria-content">
                     <h3>Desmontagem manual</h3>
                     <p>Boa parte do trabalho é feita peça por peça, com ferramenta na mão, para não perder material.</p>
@@ -483,7 +540,7 @@
             </div>
 
             <div class="galeria-card">
-                <img src="imagem/04-celulares.jpg" alt="Celulares e discos rígidos abertos sobre a bancada durante a desmontagem" loading="lazy">
+                <img src="imagens/04-celulares.jpg" alt="Celulares e discos rígidos abertos sobre a bancada durante a desmontagem" loading="lazy">
                 <div class="galeria-content">
                     <h3>Celulares abertos</h3>
                     <p>O aparelho que ficou anos na gaveta vira bateria, tela, carcaça e placa — cada um com um destino.</p>
@@ -491,7 +548,7 @@
             </div>
 
             <div class="galeria-card">
-                <img src="imagem/05-placas.jpg" alt="Placas de circuito impresso verdes e azuis separadas para recuperação de metais" loading="lazy">
+                <img src="imagens/05-placas.jpg" alt="Placas de circuito impresso verdes e azuis separadas para recuperação de metais" loading="lazy">
                 <div class="galeria-content">
                     <h3>Onde estão os metais</h3>
                     <p>As placas concentram o cobre das trilhas, o estanho das soldas e o ouro dos contatos.</p>
@@ -499,7 +556,7 @@
             </div>
 
             <div class="galeria-card destaque-final">
-                <img src="imagem/06-bigbag.jpg" alt="Big bag cheio de placas de circuito prontas para envio à recuperação de metais" loading="lazy">
+                <img src="imagens/06-bigbag.jpg" alt="Big bag cheio de placas de circuito prontas para envio à recuperação de metais" loading="lazy">
                 <div class="galeria-content">
                     <h3>Matéria-prima de novo</h3>
                     <p>Um big bag inteiro de placas pronto para seguir à recuperação. Nenhum grama disso precisou sair de uma mina.</p>
@@ -602,6 +659,38 @@
     </div>
 </section>
 
+<!-- ================= REFERÊNCIAS ================= -->
+<section id="referencias" class="sec-surface">
+    <div class="wrap">
+        <div class="sec-head">
+            <p class="eyebrow">Fontes</p>
+            <h2>Referências</h2>
+            <p>Levantamento usado nos dados citados ao longo da página, em formato ABNT.</p>
+        </div>
+
+        <ul style="list-style: none; font-size: 14px; color: var(--ink-soft); line-height: 1.8;">
+            <li style="margin-bottom: 10px;">
+                EARTHWORKS. <em>Environmental Impacts of Gold Mining</em>. Washington, DC: Earthworks, 2023.
+                Disponível em: earthworks.org. Acesso em: 15 set. 2026.
+            </li>
+            <li style="margin-bottom: 10px;">
+                EARTHWORKS. <em>How the 20 tons of mine waste per gold ring figure was calculated</em>.
+                Washington, DC: Earthworks, [2023]. Disponível em: earthworks.org. Acesso em: 15 set. 2026.
+            </li>
+            <li style="margin-bottom: 10px;">
+                INTERNATIONAL TELECOMMUNICATION UNION (ITU). <em>Global E-waste Monitor 2020: e-waste rising five
+                times faster than documented e-waste recycling</em>. Genebra: ITU, 2020. Disponível em: itu.int.
+                Acesso em: 15 set. 2026.
+            </li>
+            <li>
+                UNITED NATIONS UNIVERSITY (UNU); UNITED NATIONS INSTITUTE FOR TRAINING AND RESEARCH (UNITAR).
+                <em>The Global E-waste Monitor 2024</em>. Geneva/Bonn: UNU/UNITAR, 2024. Disponível em:
+                ewastemonitor.info. Acesso em: 15 set. 2026.
+            </li>
+        </ul>
+    </div>
+</section>
+
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -641,6 +730,37 @@
     window.addEventListener('scroll', atualizar, { passive: true });
     window.addEventListener('resize', atualizar);
     atualizar();
+})();
+
+// Menu hambúrguer (mobile)
+(function () {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    if (!toggle || !menu) return;
+
+    function fechar() {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function alternar() {
+        const aberto = menu.classList.toggle('open');
+        toggle.classList.toggle('open', aberto);
+        toggle.setAttribute('aria-expanded', String(aberto));
+    }
+
+    toggle.addEventListener('click', alternar);
+
+    // fecha o menu ao clicar em um link
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', fechar);
+    });
+
+    // fecha o menu se a tela for redimensionada para o layout desktop
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) fechar();
+    });
 })();
 </script>
 
