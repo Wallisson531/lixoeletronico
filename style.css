@@ -435,6 +435,22 @@ p {
     text-align: justify;
 }
 
+/*Infográficos anexados (equipamentos e materiais recuperáveis)*/
+.infografico {
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+}
+
+.infografico img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /*GALERIA*/
 .galeria-grid {
     display: grid;
@@ -582,6 +598,19 @@ z-index: 9999;
 background: var(--surface);
 border-top: 1px solid var(--border);
 border-bottom: 1px solid var(--border);
+}
+
+/* Cards flutuantes na seção "O que é lixo eletrônico" */
+#lixo-eletronico .card,
+#lixo-eletronico .stat-card {
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+will-change: transform;
+}
+
+#lixo-eletronico .card:hover,
+#lixo-eletronico .stat-card:hover {
+transform: translateY(-8px);
+box-shadow: var(--shadow-soft);
 }
 
 /* Faixa do manifesto */
@@ -777,6 +806,11 @@ transition: none !important;
 }
 
 .galeria-card:hover {
+transform: none;
+}
+
+#lixo-eletronico .card:hover,
+#lixo-eletronico .stat-card:hover {
 transform: none;
 }
 }
