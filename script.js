@@ -18,7 +18,7 @@ const PONTOS_DE_COLETA = [
         endereco: "Rua Eng. Heinz Marth, 1708 - Santa Felicidade, Cascavel - PR",
         recebe: "Equipamentos eletroeletrônicos de pequeno e médio porte.",
         categorias: ["eletrodomesticos", "computadores", "celulares", "baterias"],
-        mapaUrl: "https://www.google.com/maps?cid=10688151581218547372&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=pt-BR&source=embed",
+        mapaUrl: "https://www.google.com/maps?q=-24.997452,-53.466833",
         eParceiro: true // PARCEIRO DESTAQUE
     },
     {
@@ -32,7 +32,7 @@ const PONTOS_DE_COLETA = [
         endereco: "Av. Tito Muffato, 2317 - Santa Cruz, Cascavel - PR",
         recebe: "Pequenos e médios eletrônicos, celulares, baterias e placas.",
         categorias: ["celulares", "computadores", "baterias"],
-        mapaUrl: "https://www.google.com/maps/search/?api=1&query=Univel+Cascavel",
+        mapaUrl: "https://www.google.com/maps/place/Av.+Tito+Muffato,+2317+-+Santa+Cruz,+Cascavel+-+PR/@-24.9627837,-53.5125707,17z/data=!3m1!4b1!4m6!3m5!1s0x94f3d6d20301c253:0x8634702b6860241c!8m2!3d-24.9627837!4d-53.5099958!16s%2Fg%2F11ldd7mpml?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkyNy4wIKXMDSoASAFQAw%3D%3D",
         eParceiro: false
     },
     {
@@ -46,7 +46,7 @@ const PONTOS_DE_COLETA = [
         endereco: "Rua Manaus, 1524 - Country, Cascavel - PR",
         recebe: "Eletrodomésticos, TVs, computadores, pilhas e baterias.",
         categorias: ["eletrodomesticos", "computadores", "celulares", "baterias", "tvs"],
-        mapaUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Manaus+1524+Cascavel",
+        mapaUrl: "https://www.google.com/maps/place/R.+Manaus,+1524+-+Country,+Cascavel+-+PR,+85813-100/@-24.9416521,-53.4585958,17z/data=!3m1!4b1!4m6!3m5!1s0x94f3d3f54f4385bf:0xce14e8d180469fa6!8m2!3d-24.9416521!4d-53.4560209!16s%2Fg%2F11gf62fm_4?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkyNy4wIKXMDSoASAFQAw%3D%3D",
         eParceiro: false
     }
 ];
@@ -306,3 +306,64 @@ function configurarEventos() {
         });
     });
 }
+
+// ==========================================
+// LÓGICA DO CARD INTERATIVO DE METAIS
+// ==========================================
+function inicializarCardInterativo() {
+    const metalCards = document.querySelectorAll(".metal-interactive");
+    const iconWrapper = document.getElementById("card-icon-wrapper");
+    const detailBox = document.getElementById("metal-detail-box");
+
+    if (!metalCards.length || !iconWrapper || !detailBox) return;
+
+    const infoMetais = {
+        gold: {
+            titulo: "Ouro (Au)",
+            texto: "Excelente condutor que não sofre oxidação. Presente nos conectores do chip SIM e conexões da placa-mãe.",
+            classeGlow: "glow-gold"
+        },
+        copper: {
+            titulo: "Cobre (Cu)",
+            texto: "Fundamental para transmissão de energia. Presente no enrolamento do alto-falante, fiações e trilhas do circuito.",
+            classeGlow: "glow-copper"
+        },
+        silver: {
+            titulo: "Prata (Ag)",
+            texto: "Maior condutividade elétrica entre todos os metais. Utilizada em soldas de alta precisão e chaves de contato.",
+            classeGlow: "glow-silver"
+        }
+    };
+
+    metalCards.forEach(card => {
+        const chaveMetal = card.getAttribute("data-metal");
+
+        const ativarEfeito = () => {
+            const dados = infoMetais[chaveMetal];
+            if (!dados) return;
+
+            // Remove destaques anteriores
+            metalCards.forEach(c => c.classList.remove("active"));
+            iconWrapper.className = "card-icon-wrapper " + dados.classeGlow;
+
+            card.classList.add("active");
+            detailBox.innerHTML = `<strong>${dados.titulo}:</strong> ${dados.texto}`;
+        };
+
+        const resetarEfeito = () => {
+            metalCards.forEach(c => c.classList.remove("active"));
+            iconWrapper.className = "card-icon-wrapper";
+            detailBox.innerText = "Passe o cursor ou toque em um metal para ver a aplicação.";
+        };
+
+        // Eventos para Mouse e Mobile (Touch)
+        card.addEventListener("mouseenter", ativarEfeito);
+        card.addEventListener("mouseleave", resetarEfeito);
+        card.addEventListener("click", ativarEfeito);
+    });
+}
+
+// Chame a função dentro da inicialização principal:
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarCardInterativo();
+});

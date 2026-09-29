@@ -34,9 +34,9 @@
 
             <nav class="main-nav" aria-label="Navegação principal">
                 <a href="#inicio">Início</a>
-                <a href="#projeto">Sobre</a>
                 <a href="#descarte">Onde Descartar</a>
                 <a href="#equipamentos">Equipamentos</a>
+                <a href="#exemplos">Exemplos</a>
                 <a href="#lixo-eletronico">Pesquisa</a>
                 <a href="#materiais">Materiais</a>
                 <a href="#galeria">Galeria</a>
@@ -67,7 +67,7 @@
             <div class="hero-container">
                 <div class="hero-text-content">
                     <div class="hero-badge">
-                        <i data-lucide="sparkles"></i> Beyond Collection · Conscientização
+                        <i data-lucide="sparkles"></i>Projeto · Beyond Collection
                     </div>
 
                     <h1 class="hero-title">
@@ -105,34 +105,39 @@
                 </div>
 
                 <!-- Elemento Visual Interativo -->
-                <div class="hero-interactive-container">
-                    <div class="interactive-card">
-                        <div class="card-tag">
-                            Mineração Urbana Adormecida
-                        </div>
+                <!-- Elemento Visual Interativo -->
+            <div class="hero-interactive-container">
+                <div class="interactive-card" id="interactive-card">
+                    <div class="card-tag">
+                        Mineração Urbana Adormecida
+                    </div>
 
-                        <div class="card-icon-wrapper">
-                            <i data-lucide="smartphone" class="icon-main"></i>
-                            <i data-lucide="cpu" class="icon-floating"></i>
-                        </div>
+                    <div class="card-icon-wrapper" id="card-icon-wrapper">
+                        <i data-lucide="smartphone" class="icon-main" id="icon-main"></i>
+                        <i data-lucide="cpu" class="icon-floating"></i>
+                    </div>
 
-                        <h3 class="card-title">Composição dos Equipamentos</h3>
-                        <p class="card-subtitle">Passe o cursor para identificar os metais presentes nos eletrônicos:</p>
+                    <h3 class="card-title">Composição dos Equipamentos</h3>
+                    <p class="card-subtitle" id="metal-info-desc">Passe o cursor sobre os metais abaixo para identificar a aplicação:</p>
 
-                        <div class="metals-grid">
-                            <div class="metal-card">
-                                <span class="metal-name text-gold">Ouro (Au)</span>
-                                <span class="metal-usage">Contatos</span>
-                            </div>
-                            <div class="metal-card">
-                                <span class="metal-name text-copper">Cobre (Cu)</span>
-                                <span class="metal-usage">Fiação</span>
-                            </div>
-                            <div class="metal-card">
-                                <span class="metal-name text-silver">Prata (Ag)</span>
-                                <span class="metal-usage">Relés</span>
-                            </div>
+                    <div class="metals-grid">
+                        <div class="metal-card metal-interactive" data-metal="gold">
+                            <span class="metal-name text-gold">Ouro (Au)</span>
+                            <span class="metal-usage">Contatos</span>
                         </div>
+                        <div class="metal-card metal-interactive" data-metal="copper">
+                            <span class="metal-name text-copper">Cobre (Cu)</span>
+                            <span class="metal-usage">Fiação</span>
+                        </div>
+                        <div class="metal-card metal-interactive" data-metal="silver">
+                            <span class="metal-name text-silver">Prata (Ag)</span>
+                            <span class="metal-usage">Relés</span>
+                        </div>
+                    </div>
+
+                    <!-- Tooltip/Caixa de informação dinâmica -->
+                    <div class="metal-detail-box" id="metal-detail-box">
+                        Selecione ou passe o mouse em um metal para ver detalhes.
                     </div>
                 </div>
             </div>
@@ -192,105 +197,8 @@
             </div>
         </section>
 
-        <!-- 5. BUSCA POR TIPO DE EQUIPAMENTO -->
-        <section id="equipamentos" class="section">
-            <div class="section-container">
-                <div class="section-header-center">
-                    <span class="section-tag">Busca por Tipo de Equipamento</span>
-                    <h2 class="section-title">Equipamentos Eletroeletrônicos</h2>
-                    <p class="section-subtitle">Selecione uma categoria para consultar as orientações específicas de descarte.</p>
-                </div>
-
-                <div class="categories-grid">
-                    <button class="category-card active" data-category="celulares">
-                        <div class="category-icon">
-                            <i data-lucide="smartphone"></i>
-                        </div>
-                        <span class="category-name">Celulares</span>
-                    </button>
-
-                    <button class="category-card" data-category="computadores">
-                        <div class="category-icon">
-                            <i data-lucide="monitor"></i>
-                        </div>
-                        <span class="category-name">Computadores</span>
-                    </button>
-
-                    <button class="category-card" data-category="tvs">
-                        <div class="category-icon">
-                            <i data-lucide="tv"></i>
-                        </div>
-                        <span class="category-name">Televisores</span>
-                    </button>
-
-                    <button class="category-card" data-category="pilhas">
-                        <div class="category-icon">
-                            <i data-lucide="battery"></i>
-                        </div>
-                        <span class="category-name">Pilhas e Baterias</span>
-                    </button>
-
-                    <button class="category-card" data-category="outros">
-                        <div class="category-icon">
-                            <i data-lucide="plug"></i>
-                        </div>
-                        <span class="category-name">Outros Eletros</span>
-                    </button>
-                </div>
-
-                <!-- Painel Informativo -->
-                <div id="painel-equipamento" class="info-panel">
-                    <h3 id="eq-titulo" class="info-panel-title">Celulares e Telefonia</h3>
-                    <p id="eq-descricao" class="info-panel-description">
-                        Celulares e smartphones possuem mineração urbana embutida: conectores folheados a ouro, trilhas de prata e cobre nas placas de circuito impresso. Antes do descarte, recomenda-se remover os cartões SIM e realizar a restauração para os padrões de fábrica.
-                    </p>
-                    <a href="#descarte" class="btn btn-primary btn-small">
-                        Localizar Ponto para este Item
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. CAMINHO DO MATERIAL -->
-        <section id="caminho-material" class="section section-alt">
-            <div class="section-container">
-                <div class="section-header-center">
-                    <span class="section-tag">Caminho do Resíduo</span>
-                    <h2 class="section-title">O que acontece quando descartamos adequadamente</h2>
-                    <p class="section-subtitle">Acompanhe a jornada do material desde a entrega no ponto até a separação dos componentes.</p>
-                </div>
-
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Coleta</h3>
-                        <p class="step-description">O aparelho é entregue em um ponto de coleta ou em uma ação da campanha.</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Triagem</h3>
-                        <p class="step-description">Os itens são separados por tipo e por porte: pequenos, médios e grandes.</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Desmontagem</h3>
-                        <p class="step-description">Placas, fiação, plásticos, baterias e carcaças são separados manualmente.</p>
-                    </div>
-
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Recuperação</h3>
-                        <p class="step-description">Os metais voltam à indústria como matéria-prima e os resíduos perigosos têm destino controlado.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 7. PESQUISA / CONCEITO -->
-        <section id="lixo-eletronico" class="section">
+        <section id="lixo-eletronico" class="section section-alt">
             <div class="section-container">
                 <div class="section-header-left">
                     <span class="section-tag">Pesquisa</span>
@@ -368,7 +276,7 @@
                     </div>
 
                     <div class="metric-card metric-cyan">
-                        <div class="metric-badge">US$10B</div>
+                        <div class="metric-badge">R$10B</div>
                         <div class="metric-description">
                             <strong>US$ 10 bi</strong> era o valor estimado em materiais recuperáveis descartados corretamente naquele ano <span class="reference-text">(ITU, 2020)</span>.
                         </div>
@@ -384,7 +292,7 @@
                         </p>
                         <ul class="materials-list">
                             <li><strong>Metais ferrosos:</strong> chassi, suportes, motores</li>
-                            <li><strong>Metais não ferrosos:</strong> cobre, alumínio, estanho</li>
+                            <li><strong>Metais não ferrosos:</strong> cobre, alumínio, estranho</li>
                             <li><strong>Metais preciosos:</strong> ouro, prata, paládio</li>
                             <li><strong>Plásticos e vidro:</strong> carcaças, telas, isolamento</li>
                         </ul>
@@ -405,8 +313,143 @@
             </div>
         </section>
 
+        <!-- 5. BUSCA POR TIPO DE EQUIPAMENTO -->
+        <section id="equipamentos" class="section">
+            <div class="section-container">
+                <div class="section-header-center">
+                    <span class="section-tag">Busca por Tipo de Equipamento</span>
+                    <h2 class="section-title">Equipamentos Eletroeletrônicos</h2>
+                    <p class="section-subtitle">Selecione uma categoria para consultar as orientações específicas de descarte.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <button class="category-card active" data-category="celulares">
+                        <div class="category-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <span class="category-name">Celulares</span>
+                    </button>
+
+                    <button class="category-card" data-category="computadores">
+                        <div class="category-icon">
+                            <i data-lucide="monitor"></i>
+                        </div>
+                        <span class="category-name">Computadores</span>
+                    </button>
+
+                    <button class="category-card" data-category="tvs">
+                        <div class="category-icon">
+                            <i data-lucide="tv"></i>
+                        </div>
+                        <span class="category-name">Televisores</span>
+                    </button>
+
+                    <button class="category-card" data-category="pilhas">
+                        <div class="category-icon">
+                            <i data-lucide="battery"></i>
+                        </div>
+                        <span class="category-name">Pilhas e Baterias</span>
+                    </button>
+
+                    <button class="category-card" data-category="outros">
+                        <div class="category-icon">
+                            <i data-lucide="plug"></i>
+                        </div>
+                        <span class="category-name">Outros Eletros</span>
+                    </button>
+                </div>
+
+                <!-- Painel Informativo -->
+                <div id="painel-equipamento" class="info-panel">
+                    <h3 id="eq-titulo" class="info-panel-title">Celulares e Telefonia</h3>
+                    <p id="eq-descricao" class="info-panel-description">
+                        Celulares e smartphones possuem mineração urbana embutida: conectores folheados a ouro, trilhas de prata e cobre nas placas de circuito impresso. Antes do descarte, recomenda-se remover os cartões SIM e realizar a restauração para os padrões de fábrica.
+                    </p>
+                    <a href="#descarte" class="btn btn-primary btn-small">
+                        Localizar Ponto para este Item
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção: EXEMPLOS DE APARELHOS ELETRÔNICOS -->
+        <section id="exemplos" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header-left">
+                    <span class="section-tag">Exemplos</span>
+                    <h2 class="section-title">Exemplos De Aparelhos Eletrônicos</h2>
+                    <p class="section-subtitle">Se tem tomada, pilha ou bateria, é lixo eletrônico. As categorias abaixo ajudam a identificar o que pode ser entregue nos pontos de coleta.</p>
+                </div>
+               <figure class="infographic-figure">
+                    <img src="imagem/exemplos.jpeg" alt="Infográfico dos materiais recuperáveis dentro de eletrônicos" loading="lazy">
+                </figure>
+
+                <!-- Classificação por Linhas (Marrom, Branca, Verde, Azul) -->
+                <div class="linhas-grid">
+                    <div class="linha-card linha-marrom">
+                        <h4 class="linha-title">Linha marrom</h4>
+                        <p class="linha-desc">TVs, monitores, caixas de som, aparelhos de som e videogames.</p>
+                    </div>
+
+                    <div class="linha-card linha-branca">
+                        <h4 class="linha-title">Linha branca</h4>
+                        <p class="linha-desc">Geladeira, fogão elétrico, máquina de lavar, micro-ondas e ar-condicionado.</p>
+                    </div>
+
+                    <div class="linha-card linha-verde">
+                        <h4 class="linha-title">Linha verde</h4>
+                        <p class="linha-desc">Celulares, notebooks, tablets, impressoras, roteadores e periféricos.</p>
+                    </div>
+
+                    <div class="linha-card linha-azul">
+                        <h4 class="linha-title">Linha azul</h4>
+                        <p class="linha-desc">Liquidificador, batedeira, ventilador, secador e ferramentas elétricas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. CAMINHO DO MATERIAL -->
+        <section id="caminho-material" class="section">
+            <div class="section-container">
+                <div class="section-header-center">
+                    <span class="section-tag">Caminho do Resíduo</span>
+                    <h2 class="section-title">O que acontece quando descartamos adequadamente</h2>
+                    <p class="section-subtitle">Acompanhe a jornada do material desde a entrega no ponto até a separação dos componentes.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Coleta</h3>
+                        <p class="step-description">O aparelho é entregue em um ponto de coleta ou em uma ação da campanha.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Triagem</h3>
+                        <p class="step-description">Os itens são separados por tipo e por porte: pequenos, médios e grandes.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Desmontagem</h3>
+                        <p class="step-description">Placas, fiação, plásticos, baterias e carcaças são separados manualmente.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Recuperação</h3>
+                        <p class="step-description">Os metais voltam à indústria como matéria-prima e os resíduos perigosos têm destino controlado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 8. MATÉRIAS PRIMAS -->
-        <section id="materiais" class="section section-alt">
+        <section id="materiais" class="section">
             <div class="section-container">
                 <div class="section-header-left">
                     <span class="section-tag">Matérias Primas</span>
@@ -484,7 +527,7 @@
         </section>
 
         <!-- 9. GALERIA DE FOTOS COM SUBTÍTULOS -->
-        <section id="galeria" class="section">
+        <section id="galeria" class="section section-alt">
              <div class="section-container text-center">
                  <span class="section-tag">Registros</span>
                  <h2 class="section-title">Galeria</h2>
@@ -494,43 +537,47 @@
                      <div class="gallery-item">
                          <h4 class="gallery-title">Foto 01 - Recebimento</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-1.jpg" alt="Foto 01 - Recebimento" loading="lazy">
+                             <img src="imagem/01-recebimento.jpg" alt="Foto 01 - Recebimento" loading="lazy">
                          </div>
                      </div>
 
                      <div class="gallery-item">
                          <h4 class="gallery-title">Foto 02 - Triagem</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-2.jpg" alt="Foto 02 - Triagem" loading="lazy">
+                             <img src="imagem/02-triagem.jpg" alt="Foto 02 - Triagem" loading="lazy">
                          </div>
                      </div>
 
                      <div class="gallery-item">
                          <h4 class="gallery-title">Foto 03 - Desmontagem</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-3.jpg" alt="Foto 03 - Desmontagem" loading="lazy">
+                             <img src="imagem/03-desmontagem.jpg" alt="Foto 03 - Desmontagem" loading="lazy">
                          </div>
                      </div>
 
                      <div class="gallery-item">
-                         <h4 class="gallery-title">Foto 04 - Separação de Placas</h4>
+                         <h4 class="gallery-title">Foto 04 - Celulares</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-4.jpg" alt="Foto 04 - Separação de Placas" loading="lazy">
+                             <img src="imagem/04-celulares.jpg" alt="Foto 04 - Separação de Placas" loading="lazy">
                          </div>
                      </div>
 
                      <div class="gallery-item">
-                         <h4 class="gallery-title">Foto 05 - Coleta de Baterias</h4>
+                         <h4 class="gallery-title">Foto 05 - Placas em geral</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-5.jpg" alt="Foto 05 - Coleta de Baterias" loading="lazy">
+                             <img src="imagem/05-placas.jpg" alt="Foto 05 - Coleta de Baterias" loading="lazy">
                          </div>
                      </div>
 
                      <div class="gallery-item">
-                         <h4 class="gallery-title">Foto 06 - Destinação Final</h4>
+                         <h4 class="gallery-title">Foto 06 - BigBag</h4>
                          <div class="gallery-image-wrapper">
-                             <img src="imagem/galeria-6.jpg" alt="Foto 06 - Destinação Final" loading="lazy">
+                             <img src="imagem/06-bigbag.jpg" alt="Foto 06 - Destinação Final" loading="lazy">
                          </div>
+                     </div>
+
+                     <div>
+                        <P><strong>Fotos tiradas no Centro de coleta ReciTech</strong></P>
                      </div>
                  </div>
              </div>
@@ -539,14 +586,11 @@
         <!-- 10. CTA BANNER -->
         <section class="cta-section">
             <div class="cta-container">
-                <h2 class="cta-title">Encontre o Ponto de Descarte Mais Próximo</h2>
-                <p class="cta-description">Encaminhe seus aparelhos sem uso para o destino ambientalmente correto.</p>
-                <div>
-                    <a href="#descarte" class="btn btn-dark btn-large">
-                        <i data-lucide="map-pin" class="icon-emerald"></i>
-                        LOCALIZAR PONTO DE COLETA
-                    </a>
-                </div>
+                <h2 class="cta-title">Nenhum aparelho termina quando para de funcionar.</h2>
+                <p class="cta-description">Ele termina quando ninguém mais sabe o que fazer com ele. Equanto houver cobre nas trilhas, ouro nos contatos e ferro na estrutura, existe um proximo uso possivel. O Beyound Collection acredita que informação e oque separa uma gaveta cheia de materiais eletrônico de um retorno á industria e que descartar certo deveria ser tão simples quanto comprar.
+                    <br><br>
+                -Beyound Collection
+                </p>
             </div>
         </section>
 
