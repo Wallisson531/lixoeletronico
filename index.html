@@ -1,734 +1,593 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beyond Collection — O descarte não é o fim</title>
-<meta name="description" content="Beyond Collection é uma campanha de conscientização sobre lixo eletrônico: o que é, quais materiais podem ser recuperados e onde descartar com segurança.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="favicon/favicon-96x96.png" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Beyond Collection — Conscientização sobre Lixo Eletrônico</title>
+    <meta name="description" content="O Descarte não é o fim. É o início de uma nova possibilidade. Projeto de conscientização sobre o lixo eletrônico.">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-    <div class="wrap nav-content">
-        <a href="#inicio" class="brand">
-            <div class="brand-top">Projeto</div>
-            <div class="brand-name">Beyond Collection</div>
-        </a>
+    <!-- 1. HEADER / MENU DE NAVEGAÇÃO FIXO -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#inicio" class="brand-logo">
+                <div class="brand-icon">
+                    <i data-lucide="recycle"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-subtitle">Projeto</span>
+                    <span class="brand-title">Beyond Collection</span>
+                </div>
+            </a>
 
-        <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#projeto">Sobre</a>
+                <a href="#descarte">Onde Descartar</a>
+                <a href="#equipamentos">Equipamentos</a>
+                <a href="#lixo-eletronico">Pesquisa</a>
+                <a href="#materiais">Materiais</a>
+                <a href="#galeria">Galeria</a>
+            </nav>
 
-        <nav class="nav-menu" id="navMenu" aria-label="Navegação principal">
-            <a href="#projeto">Projeto</a>
-            <a href="#lixo-eletronico">Pesquisa</a>
-            <a href="#materiais">Materiais recuperáveis</a>
-            <a href="#equipamentos">Equipamentos</a>
-            <a href="#galeria">Galeria</a>
-            <a href="#descarte" class="nav-cta">Onde descartar</a>
-        </nav>
-    </div>
-</header>
+            <div class="header-actions">
+                <!-- Botão Alternador de Modo Claro/Escuro -->
+                <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle-btn">
+                    <i id="theme-icon-sun" data-lucide="sun" class="icon-sun"></i>
+                    <i id="theme-icon-moon" data-lucide="moon" class="icon-moon"></i>
+                </button>
 
-<main>
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="inicio">
-    <div class="wrap">
-        <p class="eyebrow">Beyond Collection · Projeto de conscientização</p>
-
-        <h1>O Descarte não é o fim.<br>É o início de uma nova possibilidade.</h1>
-
-        <p class="lead">
-            Vivemos em uma sociedade cada vez mais conectada. Celulares, computadores, videogames,
-            eletrodomésticos e outros equipamentos eletrônicos fazem parte da nossa rotina. Mas existe uma
-            pergunta que ainda precisa ser feita:<br><br>
-             <strong>
-                O que acontece com esses equipamentos quando deixam de ser
-                utilizados?
-            </strong>
-        </p>
-
-        <div class="hero-actions">
-            <a href="#projeto" class="btn btn-primary">Conheça o projeto</a>
-            <a href="#descarte" class="btn btn-ghost">Encontrar um ponto de coleta</a>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= O PROJETO ================= -->
-<section id="projeto">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Sobre</p>
-             <h2>Conceito do Projeto Beyond Collection</h2>
-            <span class="fonte-ref" tabindex="0" data-fonte="BALDÉ, Cornelis P. et al. The Global E-waste Monitor 2024. Geneva; Bonn: International Telecommunication Union (ITU); United Nations Institute for Training and Research (UNITAR), 2024. Disponível em: https://www.itu.int/pub/D-GEN-E_WASTE.01-2024">
-                <p>
-                    O Beyond Collection nasceu para olhar além do momento do descarte. Um aparelho que deixou de ser utilizado não significa que perdeu todo o seu valor. Por trás de cada eletrônico existem materiais que podem seguir diferentes caminhos após a coleta, incluindo processos de separação, reaproveitamento e reciclagem.
-                </p>
-                <p>
-                    Queremos mostrar o que normalmente não vemos: o caminho do eletrônico depois que ele sai das nossas mãos.
-                </p>
-                <p>
-                    Mais do que falar sobre descarte, o Beyond Collection busca aproximar tecnologia, informação e responsabilidade ambiental, incentivando uma nova forma de enxergar aquilo que chamamos de “lixo eletrônico”.
-                </p>
-            </span><br>
-
-        <div class="three-col">
-            <div class="card">
-                <h3>Foco do Projeto</h3>
-                <p>
-                    Informar sobre os materiais presentes nos equipamentos eletrônicos  e conscientizar sobre a importância do descarte adequado dos resíduos eletroeletrônicos.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Quem participa</h3>
-                <p>
-                    Os participantes do projeto são estudantes do curso de TADS da Univel:
-                </p>
-                <ul class="lista-check">
-                    <li><strong>Deysi Coutinho</strong></li>
-                    <li><strong>Wallisson Daniel</strong></li>
-                    <li><strong>Ana Luiza</strong></li>
-                    <li><strong>José Henrique</strong></li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>De onde veio a ideia</h3>
-                <p>
-                    O projeto nasceu como trabalho acadêmico para a matéria de PI — Comunicação como Ferramenta de Transformação,
-                    ministrada pelo professor Lucas.
-                </p>
-                <p>
-                    A proposta da disciplina é usar a comunicação para gerar mudança de comportamento. O tema escolhido
-                    foi o lixo eletrônico, por ser um resíduo presente em todas as casas e, ainda assim, pouco
-                    compreendido.
-                </p>
+                <a href="#descarte" class="btn btn-primary btn-header">
+                    <i data-lucide="map-pin"></i>
+                    Encontrar Ponto
+                </a>
             </div>
         </div>
+    </header>
 
-    </div>
-</section>
+    <main class="main-content">
 
-<!-- ================= O QUE É LIXO ELETRÔNICO ================= -->
-<section id="lixo-eletronico" class="sec-surface">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Pesquisa</p>
-            <h2>O que é lixo eletrônico</h2>
-             <span class="fonte-ref" tabindex="0" data-fonte="BALDÉ, Cornelis P. et al. The Global E-waste Monitor 2024. Geneva; Bonn: International Telecommunication Union (ITU); United Nations Institute for Training and Research (UNITAR), 2024. Disponível em: https://www.itu.int/pub/D-GEN-E_WASTE.01-2024">
-                    <p>
-                        Lixo eletrônico, também chamado de resíduo eletroeletrônico, é todo equipamento que utiliza eletricidade ou componentes eletrônicos e que chegou ao fim de sua vida útil, deixou de ser utilizado ou foi substituído porque apresentou defeito.
+        <!-- 2. HERO SECTION -->
+        <section id="inicio" class="hero-section">
+            <div class="glow-effect glow-left"></div>
+            <div class="glow-effect glow-right"></div>
+
+            <div class="hero-container">
+                <div class="hero-text-content">
+                    <div class="hero-badge">
+                        <i data-lucide="sparkles"></i> Beyond Collection · Conscientização
+                    </div>
+
+                    <h1 class="hero-title">
+                        O Descarte não é o fim.<br>
+                        <span class="gradient-text">
+                            É o início de uma nova possibilidade.
+                        </span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Vivemos em uma sociedade cada vez mais conectada. Celulares, computadores, videogames, eletrodomésticos e outros equipamentos eletrônicos fazem parte da nossa rotina. Mas existe uma pergunta que ainda precisa ser feita:<br>
+                        <strong>
+                            O que acontece com esses equipamentos quando deixam de ser utilizados?
+                        </strong>
                     </p>
-                </span>
-            <p>
-                Lixo eletrônico, e-lixo ou REEE (Resíduos de Equipamentos Eletroeletrônicos) é todo produto que
-                depende de corrente elétrica, pilha ou bateria para funcionar e que chegou ao fim da vida útil — esteja
-                quebrado, obsoleto ou apenas sem uso. É a definição adotada pelo relatório Global E-waste Monitor,
-                da ONU, e pela Política Nacional de Resíduos Sólidos no Brasil.
-            </p>
-        </div>
-        <h2>Por que devemos realizar o descarte adquado</h2><br>
 
-        <div class="two-col">
-            <div class="card">
-                <h3>Segundo o The Global E-waste Monitor 2024</h3>
-                <p>
-                    o Brasil gerou aproximadamente 2,4 milhões de toneladas de resíduos eletroeletrônicos em 2022, colocando o país entre os maiores geradores desse tipo de resíduo no mundo.
-                </p>
-                <p>
-                    Outro traço é a velocidade. A vida útil média dos aparelhos caiu com a obsolescência programada e
-                    com o barateamento da tecnologia: troca-se de celular em dois ou três anos, e o aparelho antigo
-                    quase nunca vira resíduo — vira gaveta. Esse estoque parado é chamado de
-                    <em>mineração urbana adormecida</em>.
+                    <!-- Busca Direta no Hero -->
+                    <div class="hero-search-card">
+                        <form id="hero-search-form" class="hero-search-form">
+                            <div class="input-group">
+                                <i data-lucide="search" class="input-icon"></i>
+                                <input type="text" id="hero-search-input" placeholder="Digite sua cidade ou CEP..." class="form-input">
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Localizar
+                                <i data-lucide="arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#projeto" class="btn btn-secondary">Conheça o projeto</a>
+                        <a href="#descarte" class="btn btn-primary">Encontrar um ponto de coleta</a>
+                    </div>
+                </div>
+
+                <!-- Elemento Visual Interativo -->
+                <div class="hero-interactive-container">
+                    <div class="interactive-card">
+                        <div class="card-tag">
+                            Mineração Urbana Adormecida
+                        </div>
+
+                        <div class="card-icon-wrapper">
+                            <i data-lucide="smartphone" class="icon-main"></i>
+                            <i data-lucide="cpu" class="icon-floating"></i>
+                        </div>
+
+                        <h3 class="card-title">Composição dos Equipamentos</h3>
+                        <p class="card-subtitle">Passe o cursor para identificar os metais presentes nos eletrônicos:</p>
+
+                        <div class="metals-grid">
+                            <div class="metal-card">
+                                <span class="metal-name text-gold">Ouro (Au)</span>
+                                <span class="metal-usage">Contatos</span>
+                            </div>
+                            <div class="metal-card">
+                                <span class="metal-name text-copper">Cobre (Cu)</span>
+                                <span class="metal-usage">Fiação</span>
+                            </div>
+                            <div class="metal-card">
+                                <span class="metal-name text-silver">Prata (Ag)</span>
+                                <span class="metal-usage">Relés</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SEÇÃO SOBRE O PROJETO -->
+        <section id="projeto" class="section section-bordered">
+            <div class="section-container">
+                <div class="section-header-left">
+                    <span class="section-tag">Sobre</span>
+                    <h2 class="section-title">Conceito do Projeto Beyond Collection</h2>
+                    <div class="section-text-body">
+                        <p>
+                            O Beyond Collection nasceu para olhar além do momento do descarte. Um aparelho que deixou de ser utilizado não significa que perdeu todo o seu valor. Por trás de cada eletrônico existem materiais que podem seguir diferentes caminhos após a coleta, incluindo processos de separação, reaproveitamento e reciclagem.
+                        </p>
+                        <p>
+                            Queremos mostrar o que normalmente não vemos: o caminho do eletrônico depois que ele sai das nossas mãos.
+                        </p>
+                        <p>
+                            Mais do que falar sobre descarte, o Beyond Collection busca aproximar tecnologia, informação e responsabilidade ambiental, incentivando uma nova forma de enxergar aquilo que chamamos de “lixo eletrônico”.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PONTOS DE DESCARTE -->
+        <section id="descarte" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header-center">
+                    <span class="section-tag">Onde Descartar</span>
+                    <h2 class="section-title">Pontos de Coleta e Descarte Adequado</h2>
+                    <p class="section-subtitle">Disponibilização de informações sobre locais autorizados para entrega de resíduos eletroeletrônicos.</p>
+                </div>
+
+                <!-- Filtros de Busca -->
+                <div class="filters-container">
+                    <div class="filters-grid">
+                        <div class="input-group">
+                            <i data-lucide="map-pin" class="input-icon"></i>
+                            <input type="text" id="filtro-cidade" placeholder="Informe sua cidade, bairro ou CEP (ex: Cascavel, Centro, 85803-400)..." class="form-input">
+                        </div>
+                        <div class="select-group">
+                            <select id="filtro-categoria" class="form-select">
+                                <option value="todos">Todos os tipos de equipamentos</option>
+                                <option value="celulares">Celulares e Telefonia</option>
+                                <option value="computadores">Computadores e Periféricos</option>
+                                <option value="baterias">Pilhas e Baterias</option>
+                                <option value="eletrodomesticos">Eletrodomésticos</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid de Locais Dinâmico -->
+                <div id="grid-pontos" class="points-grid"></div>
+            </div>
+        </section>
+
+        <!-- 5. BUSCA POR TIPO DE EQUIPAMENTO -->
+        <section id="equipamentos" class="section">
+            <div class="section-container">
+                <div class="section-header-center">
+                    <span class="section-tag">Busca por Tipo de Equipamento</span>
+                    <h2 class="section-title">Equipamentos Eletroeletrônicos</h2>
+                    <p class="section-subtitle">Selecione uma categoria para consultar as orientações específicas de descarte.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <button class="category-card active" data-category="celulares">
+                        <div class="category-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <span class="category-name">Celulares</span>
+                    </button>
+
+                    <button class="category-card" data-category="computadores">
+                        <div class="category-icon">
+                            <i data-lucide="monitor"></i>
+                        </div>
+                        <span class="category-name">Computadores</span>
+                    </button>
+
+                    <button class="category-card" data-category="tvs">
+                        <div class="category-icon">
+                            <i data-lucide="tv"></i>
+                        </div>
+                        <span class="category-name">Televisores</span>
+                    </button>
+
+                    <button class="category-card" data-category="pilhas">
+                        <div class="category-icon">
+                            <i data-lucide="battery"></i>
+                        </div>
+                        <span class="category-name">Pilhas e Baterias</span>
+                    </button>
+
+                    <button class="category-card" data-category="outros">
+                        <div class="category-icon">
+                            <i data-lucide="plug"></i>
+                        </div>
+                        <span class="category-name">Outros Eletros</span>
+                    </button>
+                </div>
+
+                <!-- Painel Informativo -->
+                <div id="painel-equipamento" class="info-panel">
+                    <h3 id="eq-titulo" class="info-panel-title">Celulares e Telefonia</h3>
+                    <p id="eq-descricao" class="info-panel-description">
+                        Celulares e smartphones possuem mineração urbana embutida: conectores folheados a ouro, trilhas de prata e cobre nas placas de circuito impresso. Antes do descarte, recomenda-se remover os cartões SIM e realizar a restauração para os padrões de fábrica.
+                    </p>
+                    <a href="#descarte" class="btn btn-primary btn-small">
+                        Localizar Ponto para este Item
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CAMINHO DO MATERIAL -->
+        <section id="caminho-material" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header-center">
+                    <span class="section-tag">Caminho do Resíduo</span>
+                    <h2 class="section-title">O que acontece quando descartamos adequadamente</h2>
+                    <p class="section-subtitle">Acompanhe a jornada do material desde a entrega no ponto até a separação dos componentes.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Coleta</h3>
+                        <p class="step-description">O aparelho é entregue em um ponto de coleta ou em uma ação da campanha.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Triagem</h3>
+                        <p class="step-description">Os itens são separados por tipo e por porte: pequenos, médios e grandes.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Desmontagem</h3>
+                        <p class="step-description">Placas, fiação, plásticos, baterias e carcaças são separados manualmente.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Recuperação</h3>
+                        <p class="step-description">Os metais voltam à indústria como matéria-prima e os resíduos perigosos têm destino controlado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PESQUISA / CONCEITO -->
+        <section id="lixo-eletronico" class="section">
+            <div class="section-container">
+                <div class="section-header-left">
+                    <span class="section-tag">Pesquisa</span>
+                    <h2 class="section-title">O que é lixo eletrônico</h2>
+                    <div class="section-text-body">
+                        <p>
+                            Lixo eletrônico, também chamado de resíduo eletroeletrônico, é todo equipamento que utiliza eletricidade ou componentes eletrônicos e que chegou ao fim de sua vida útil, deixou de ser utilizado ou foi substituído porque apresentou defeito.
+                        </p>
+                        <p>
+                            Lixo eletrônico, e-lixo ou REEE (Resíduos de Equipamentos Eletroeletrônicos) é todo produto que depende de corrente elétrica, pilha ou bateria para funcionar e que chegou ao fim da vida útil.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Por que devemos realizar o descarte adequado</h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4 class="stat-title">
+                            <i data-lucide="bar-chart-3" class="icon-emerald"></i>
+                            Segundo o The Global E-waste Monitor 2024
+                        </h4>
+                        <p class="stat-text">
+                            O Brasil gerou aproximadamente <strong>2,4 milhões de toneladas</strong> de resíduos eletroeletrônicos em 2022, colocando o país entre os maiores geradores desse tipo de resíduo no mundo.
+                        </p>
+                        <p class="stat-text">
+                            A troca constante por novos modelos gera a <em class="highlight-text">mineração urbana adormecida</em> — um grande estoque de aparelhos parados em gavetas.
+                        </p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4 class="stat-title">
+                            <i data-lucide="trending-up" class="icon-rose"></i>
+                            Cresce mais rápido do que a reciclagem
+                        </h4>
+                        <p class="stat-text">
+                            O mundo gerou <strong>62 milhões de toneladas de e-lixo em 2022</strong>. A geração cresce cerca de cinco vezes mais rápido do que a reciclagem formalmente documentada.
+                        </p>
+
+                        <div class="progress-bars-container">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span>Coletado e reciclado formalmente no mundo (2022)</span>
+                                    <span class="text-emerald">22,3%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-emerald" style="width: 22.3%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span>Segue sem destinação documentada</span>
+                                    <span class="text-rose">77,7%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill fill-rose" style="width: 77.7%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="stat-footer-text">
+                            No Brasil, a média é de cerca de <strong>10 kg de e-lixo por habitante ao ano</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Métricas Destacadas -->
+                <div class="metrics-grid">
+                    <div class="metric-card metric-emerald">
+                        <div class="metric-badge">7,3kg</div>
+                        <div class="metric-description">
+                            <strong>7,3 kg</strong> foi a média de lixo eletrônico descartada em 2019 para cada habitante na Terra <span class="reference-text">(ITU, 2020)</span>.
+                        </div>
+                    </div>
+
+                    <div class="metric-card metric-cyan">
+                        <div class="metric-badge">US$10B</div>
+                        <div class="metric-description">
+                            <strong>US$ 10 bi</strong> era o valor estimado em materiais recuperáveis descartados corretamente naquele ano <span class="reference-text">(ITU, 2020)</span>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Composição vs Riscos -->
+                <div class="composition-grid">
+                    <div class="composition-card">
+                        <h4 class="card-title">Do que ele é feito</h4>
+                        <p class="card-description">
+                            Em média, um equipamento eletroeletrônico é formado por metais ferrosos e não ferrosos, plásticos, vidro e uma fração pequena de metais preciosos.
+                        </p>
+                        <ul class="materials-list">
+                            <li><strong>Metais ferrosos:</strong> chassi, suportes, motores</li>
+                            <li><strong>Metais não ferrosos:</strong> cobre, alumínio, estanho</li>
+                            <li><strong>Metais preciosos:</strong> ouro, prata, paládio</li>
+                            <li><strong>Plásticos e vidro:</strong> carcaças, telas, isolamento</li>
+                        </ul>
+                    </div>
+
+                    <div class="composition-card">
+                        <h4 class="card-title">Por que não pode ir para o lixo comum</h4>
+                        <p class="card-description">
+                            Esses aparelhos carregam substâncias como chumbo, mercúrio, cádmio e retardantes de chama, que contaminam o solo e a água em aterros e lixões.
+                        </p>
+                        <div class="warning-box">
+                            <i data-lucide="alert-triangle" class="warning-icon"></i>
+                            <span>Aparelhos com bateria de lítio não devem ser perfurados nem prensados pelo alto risco de incêndio.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. MATÉRIAS PRIMAS -->
+        <section id="materiais" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header-left">
+                    <span class="section-tag">Matérias Primas</span>
+                    <h2 class="section-title">Matérias Primas Recuperadas</h2>
+                    <p class="section-subtitle">
+                        Reciclar significa devolver esses metais à indústria sem precisar minerar de novo.
+                    </p>
+                </div>
+
+                <div class="tags-cloud">
+                    <span class="tag tag-gold">ouro</span>
+                    <span class="tag tag-copper">cobre</span>
+                    <span class="tag tag-silver">prata</span>
+                    <span class="tag tag-tin">estanho</span>
+                    <span class="tag tag-aluminum">alumínio</span>
+                    <span class="tag tag-iron">ferro</span>
+                </div>
+
+                <figure class="infographic-figure">
+                    <img src="imagem/materiais.jpeg" alt="Infográfico dos materiais recuperáveis dentro de eletrônicos" loading="lazy">
+                </figure>
+
+                <div class="table-container">
+                    <table class="materials-table">
+                        <caption>Materiais recuperáveis e onde aparecem nos equipamentos</caption>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Função no equipamento</th>
+                                <th>Exemplo: celular</th>
+                                <th>Exemplo: máquina de lavar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ouro</strong> <span class="element-symbol">Au</span></td>
+                                <td>Conduz eletricidade sem oxidar.</td>
+                                <td>Contatos da placa-mãe.</td>
+                                <td>Contatos da placa de controle.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cobre</strong> <span class="element-symbol">Cu</span></td>
+                                <td>Principal condutor elétrico.</td>
+                                <td>Trilhas da placa e motor vibratório.</td>
+                                <td>Enrolamento do motor e fiação.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prata</strong> <span class="element-symbol">Ag</span></td>
+                                <td>Contatos elétricos e pastas condutivas.</td>
+                                <td>Trilhas condutivas internas.</td>
+                                <td>Contatos dos relés.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Estanho</strong> <span class="element-symbol">Sn</span></td>
+                                <td>Liga de solda para componentes.</td>
+                                <td>Solda dos componentes eletrônicos.</td>
+                                <td>Solda da placa do painel.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alumínio</strong> <span class="element-symbol">Al</span></td>
+                                <td>Dissipador de calor e estrutura.</td>
+                                <td>Carcaça e blindagem térmica.</td>
+                                <td>Peças do motor e chassi.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ferro</strong> <span class="element-symbol">Fe</span></td>
+                                <td>Resistência mecânica.</td>
+                                <td>Parafusos e suportes.</td>
+                                <td>Chassi e tambor de aço.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. GALERIA DE FOTOS COM SUBTÍTULOS -->
+        <section id="galeria" class="section">
+             <div class="section-container text-center">
+                 <span class="section-tag">Registros</span>
+                 <h2 class="section-title">Galeria</h2>
+                 <p class="section-subtitle center-subtitle">Acompanhe as imagens das nossas ações de conscientização, do processo de triagem e recuperação.</p>
+                 
+                 <div class="gallery-grid">
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 01 - Recebimento</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-1.jpg" alt="Foto 01 - Recebimento" loading="lazy">
+                         </div>
+                     </div>
+
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 02 - Triagem</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-2.jpg" alt="Foto 02 - Triagem" loading="lazy">
+                         </div>
+                     </div>
+
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 03 - Desmontagem</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-3.jpg" alt="Foto 03 - Desmontagem" loading="lazy">
+                         </div>
+                     </div>
+
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 04 - Separação de Placas</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-4.jpg" alt="Foto 04 - Separação de Placas" loading="lazy">
+                         </div>
+                     </div>
+
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 05 - Coleta de Baterias</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-5.jpg" alt="Foto 05 - Coleta de Baterias" loading="lazy">
+                         </div>
+                     </div>
+
+                     <div class="gallery-item">
+                         <h4 class="gallery-title">Foto 06 - Destinação Final</h4>
+                         <div class="gallery-image-wrapper">
+                             <img src="imagem/galeria-6.jpg" alt="Foto 06 - Destinação Final" loading="lazy">
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <!-- 10. CTA BANNER -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Encontre o Ponto de Descarte Mais Próximo</h2>
+                <p class="cta-description">Encaminhe seus aparelhos sem uso para o destino ambientalmente correto.</p>
+                <div>
+                    <a href="#descarte" class="btn btn-dark btn-large">
+                        <i data-lucide="map-pin" class="icon-emerald"></i>
+                        LOCALIZAR PONTO DE COLETA
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <i data-lucide="recycle" class="icon-emerald"></i> Beyond Collection
+                </div>
+                <p class="footer-text">
+                    Iniciativa voltada à conscientização sobre resíduos eletroeletrônicos, incentivando a logística reversa e a reciclagem.
                 </p>
             </div>
 
-            <div class="card">
-                <h3>Cresce mais rápido do que a reciclagem</h3>
-                <p>
-                    O mundo gerou <span class="fonte-ref" tabindex="0" data-fonte="Global E-waste Monitor 2024 (ONU/UNITAR): 62 milhões de toneladas de e-lixo geradas em 2022, com projeção de 82 milhões até 2030.">62 milhões de toneladas de e-lixo em 2022</span>
-                    — volume que encheria 1,5 milhão de caminhões de 40 toneladas. A geração cresce cerca de cinco
-                    vezes mais rápido do que a reciclagem formalmente documentada, e a projeção é chegar a 82 milhões
-                    de toneladas em 2030.
-                </p>
-
-                <div class="bar-row">
-                    <div class="bar-label"><span>Coletado e reciclado formalmente no mundo (2022)</span><span>22,3%</span></div>
-                    <div class="bar-track"><div class="bar-fill" style="width: 22.3%;"></div></div>
-                </div>
-
-                <div class="bar-row">
-                    <div class="bar-label"><span>Segue sem destinação documentada</span><span>77,7%</span></div>
-                    <div class="bar-track"><div class="bar-fill" style="width: 77.7%; background: var(--danger);"></div></div>
-                </div>
-
-                <p style="font-size: 15px; color: var(--ink-soft); margin-top: 10px;">
-                    No Brasil, a média é de cerca de
-                    <span class="fonte-ref" tabindex="0" data-fonte="Estimativas a partir do The Global E-waste Monitor 2024 (UNITAR), divulgadas na imprensa brasileira.">10 kg de e-lixo por habitante ao ano</span>.
-                </p>
-            </div>
-        </div>
-
-        <div class="two-col" style="margin-top: 14px;">
-            <div class="stat-card c-steel">
-                <div class="num"></div>
-                <div class="label">
-                    <strong>7,3 kg</strong> foi a média de lixo eletrônico descartada em 2019 para cada homem, mulher e criança na Terra
-                    <span class="fonte-ref" tabindex="0" data-fonte="ITU. Global E-waste Monitor 2020: e-waste rising five times faster than documented e-waste recycling. Genebra: International Telecommunication Union, 2020. Disponível em: itu.int. Acesso em: 15 set. 2026.">(ITU, 2020)</span>.
-                </div>
-            </div>
-
-            <div class="stat-card c-hazard">
-                <div class="num"></div>
-                <div class="label">
-                    <strong>US$ 10 bi</strong> era o valor estimado em materiais recuperáveis embutido nos itens descartados corretamente naquele
-                    ano
-                    <span class="fonte-ref" tabindex="0" data-fonte="ITU. Global E-waste Monitor 2020: e-waste rising five times faster than documented e-waste recycling. Genebra: International Telecommunication Union, 2020. Disponível em: itu.int. Acesso em: 15 set. 2026.">(ITU, 2020)</span>.
-                </div>
-            </div>
-        </div>
-
-        <!-- Composição e riscos -->
-        <div class="two-col" style="margin-top: 24px;">
-            <div class="card">
-                <h3>Do que ele é feito</h3>
-                <p>
-                    Em média, um equipamento eletroeletrônico é formado por metais ferrosos e não ferrosos, plásticos,
-                    vidro e uma fração pequena de metais preciosos — essa última responsável pela maior parte do
-                    valor econômico do resíduo.
-                </p>
-                <ul class="lista-check">
-                    <li>Metais ferrosos: chassi, suportes, motores</li>
-                    <li>Metais não ferrosos: cobre, alumínio, estanho</li>
-                    <li>Metais preciosos: ouro, prata, paládio (frações mínimas, alto valor)</li>
-                    <li>Plásticos e vidro: carcaças, telas, isolamento</li>
+            <div class="footer-col">
+                <h4 class="footer-heading">Integrantes do Projeto (Univel / TADS)</h4>
+                <ul class="team-list">
+                    <li><i data-lucide="user" class="icon-emerald"></i> Deysi Coutinho</li>
+                    <li><i data-lucide="user" class="icon-emerald"></i> Wallisson Daniel</li>
+                    <li><i data-lucide="user" class="icon-emerald"></i> Ana Luiza</li>
+                    <li><i data-lucide="user" class="icon-emerald"></i> José Henrique</li>
                 </ul>
             </div>
 
-            <div class="card">
-                <h3>Porque não pode ir para o lixo comum</h3>
-                <p>
-                    Esses aparelhos carregam substâncias como chumbo, mercúrio, cádmio e retardantes de chama. Em
-                    aterros e lixões, o contato com chuva e calor libera esses elementos no solo e na água, com risco
-                    de contaminação do lençol freático e efeitos sobre o sistema nervoso, os rins e o desenvolvimento
-                    infantil.
+            <div class="footer-col">
+                <h4 class="footer-heading">Contexto Acadêmico</h4>
+                <p class="footer-text">
+                    Trabalho acadêmico desenvolvido para a disciplina de PI — <strong>Comunicação como Ferramenta de Transformação</strong>, orientada pelo Prof. Lucas na Univel.
                 </p>
-                <p>
-                    A queima a céu aberto, comum na sucata informal, agrava o problema: libera gases tóxicos e destrói
-                    justamente os metais que poderiam ser recuperados.
-                </p>
-
-                <div class="alerta">
-                    Aparelhos com bateria de lítio (celulares, notebooks, patinetes) não devem ser perfurados nem
-                    prensados: o risco é de incêndio durante o transporte e a triagem.
-                </div>
             </div>
         </div>
 
-                <!-- Etapas do projeto -->
-        <div class="conveyor" aria-hidden="true"></div>
-        <h1>O que acontece quando descartamos adquadamente</h1><br>
-
-
-        <div class="pipeline">
-            <div class="stage">
-                <div class="n">1</div>
-                <h3>Coleta</h3>
-                <p>O aparelho é entregue em um ponto de coleta ou em uma ação da campanha.</p>
-            </div>
-
-            <div class="stage">
-                <div class="n">2</div>
-                <h3>Triagem</h3>
-                <p>Os itens são separados por tipo e por porte: pequenos, médios e grandes.</p>
-            </div>
-
-            <div class="stage">
-                <div class="n">3</div>
-                <h3>Desmontagem</h3>
-                <p>Placas, fiação, plásticos, baterias e carcaças são separados manualmente.</p>
-            </div>
-
-            <div class="stage">
-                <div class="n">4</div>
-                <h3>Recuperação</h3>
-                <p>Os metais voltam à indústria como matéria-prima e os resíduos perigosos têm destino controlado.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Beyond Collection. Todos os direitos reservados.</p>
         </div>
+    </footer>
 
-    </div>
-</section>
-
-<!-- ================= MATERIAIS RECUPERÁVEIS ================= -->
-<section id="materiais" class="sec-surface">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Matérias Primas</p>
-            <h2>Matérias Primas Recuperadas</h2>
-            <p>
-                Um único equipamento reúne metais extraídos de minas em diferentes partes do mundo. Reciclar significa
-                devolver esses metais à indústria sem precisar minerar de novo.
-            </p>
-        </div>
-
-        <p style="margin-bottom: 18px;">
-            <span class="tag tag-mono">ouro</span>
-            <span class="tag tag-mono">cobre</span>
-            <span class="tag tag-mono">prata</span>
-            <span class="tag tag-mono">estanho</span>
-            <span class="tag tag-mono">alumínio</span>
-            <span class="tag tag-mono">ferro</span>
-        </p>
-
-        <figure class="infografico">
-            <img src="imagem/materiais.jpeg" alt="Infográfico dos materiais recuperáveis dentro de eletrônicos: cobre, ouro, prata, estanho, alumínio e ferro, com onde são encontrados dentro de um celular e de um videogame" loading="lazy">
-        </figure>
-
-        <div class="table-wrap" style="margin-top: 28px;">
-            <table>
-                <caption class="sr-only" style="display: none;">Materiais recuperáveis e onde eles aparecem nos equipamentos</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Material</th>
-                        <th scope="col">Função no equipamento</th>
-                        <th scope="col">Exemplo: celular</th>
-                        <th scope="col">Exemplo: máquina de lavar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="mat">Ouro</span><span class="simbolo">Au</span></td>
-                        <td>Conduz eletricidade sem oxidar, por isso reveste contatos sensíveis.</td>
-                        <td>Contatos da placa-mãe e do conector do chip.</td>
-                        <td>Contatos da placa de controle eletrônico do painel.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="mat">Cobre</span><span class="simbolo">Cu</span></td>
-                        <td>Principal condutor elétrico: fios, trilhas e bobinas.</td>
-                        <td>Trilhas da placa e bobina do motor de vibração.</td>
-                        <td>Enrolamento do motor e toda a fiação interna.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="mat">Prata</span><span class="simbolo">Ag</span></td>
-                        <td>Usada em contatos elétricos e pastas condutivas.</td>
-                        <td>Trilhas condutivas e contatos internos do aparelho.</td>
-                        <td>Contatos dos relés e do pressostato.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="mat">Estanho</span><span class="simbolo">Sn</span></td>
-                        <td>Liga de solda que fixa os componentes na placa.</td>
-                        <td>Solda de cada componente da placa principal.</td>
-                        <td>Solda da placa eletrônica e das conexões do timer.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="mat">Alumínio</span><span class="simbolo">Al</span></td>
-                        <td>Leve e bom dissipador de calor; usado em estruturas e capas.</td>
-                        <td>Carcaça, moldura interna e blindagem térmica.</td>
-                        <td>Peças do motor e componentes estruturais.</td>
-                    </tr>
-                    <tr>
-                        <td><span class="mat">Ferro</span><span class="simbolo">Fe</span></td>
-                        <td>Dá resistência mecânica à estrutura e compõe o aço.</td>
-                        <td>Parafusos, suportes e blindagem magnética.</td>
-                        <td>Chassi, tambor de aço e contrapeso.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="card destaque-final" style="margin-top: 20px;">
-            <h3>Mineração urbana: o exemplo do ouro</h3>
-            <p>
-                A mineração urbana mostra como o descarte correto preserva recursos que, de outra forma, viriam
-                direto da natureza. Ao reciclar um lote de 10 mil smartphones, recuperam-se cerca de 300 gramas de
-                ouro puro extraídos de suas placas de circuito
-                <span class="fonte-ref" tabindex="0" data-fonte="UNITED NATIONS UNIVERSITY (UNU); UNITED NATIONS INSTITUTE FOR TRAINING AND RESEARCH (UNITAR). The Global E-waste Monitor 2024. Geneva/Bonn: UNU/UNITAR, 2024. Disponível em: ewastemonitor.info. Acesso em: 15 set. 2026.">(UNU; UNITAR, 2024)</span>.
-                Na mineração tradicional, produzir apenas 9,4 gramas de ouro — o peso de uma aliança — exige
-                fragmentar e tratar quimicamente 18 toneladas de rocha matriz
-                <span class="fonte-ref" tabindex="0" data-fonte="EARTHWORKS. How the 20 tons of mine waste per gold ring figure was calculated. Washington, DC: Earthworks, [2023]. Disponível em: earthworks.org. Acesso em: 15 set. 2026.">(EARTHWORKS, 2023)</span>.
-            </p>
-
-            <div class="three-col" style="margin-top: 14px;">
-                <div class="stat-card c-hazard">
-                    <div class="num"></div>
-                    <div class="label"> <strong>300 g</strong> de ouro puro recuperados ao reciclar 10 mil smartphones</div>
-                </div>
-
-                <div class="stat-card c-copper">
-                    <div class="num"></div>
-                    <div class="label"> <strong>18 t</strong> de rocha fragmentada e tratada com químicos para extrair 9,4 g de ouro na mineração tradicional</div>
-                </div>
-
-                <div class="stat-card c-pbc">
-                    <div class="num"></div>
-                    <div class="label"><strong>574 t</strong> de rocha nativa deixam de ser destruídas ao reciclar esse mesmo lote de celulares</div>
-                </div>
-            </div>
-
-            <p style="margin-top: 14px; font-size: 15px; color: var(--ink-soft);">
-                A conta é direta: reciclar preserva a mesma quantidade de ouro sem repetir o impacto da extração —
-                sem fragmentar rocha e sem substâncias tóxicas como o cianeto, usadas na mineração tradicional
-                <span class="fonte-ref" tabindex="0" data-fonte="EARTHWORKS. Environmental Impacts of Gold Mining. Washington, DC: Earthworks, 2023. Disponível em: earthworks.org. Acesso em: 15 set. 2026.">(EARTHWORKS, 2023)</span>,
-                o que consolida a economia circular como pilar da sustentabilidade.
-            </p>
-        </div>
-
-        <div class="alerta">
-            A recuperação desses metais evita nova mineração: segundo a ONU, reciclar todo o e-lixo gerado em 2022
-            <span class="fonte-ref" tabindex="0" data-fonte="Global E-waste Monitor 2024 (ONU): a reciclagem do e-lixo gerado em 2022 evitaria a extração de 900 milhões de toneladas de minério.">pouparia 900 milhões de toneladas de minério</span>.
-        </div>
-    </div>
-
-
-</section>
-
-<!-- ================= EQUIPAMENTOS ================= -->
-<section id="equipamentos">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Exemplos</p>
-            <h2>Exemplos De Aparelhos Eletrônicos</h2>
-            <p>
-                Se tem tomada, pilha ou bateria, é lixo eletrônico. As categorias abaixo ajudam a identificar o que
-                pode ser entregue nos pontos de coleta.
-            </p>
-        </div>
-
-        <figure class="infografico">
-            <img src="imagem/exemplos.jpeg" alt="Infográfico com 40 exemplos de equipamentos eletrônicos organizados por categoria: comunicação e uso pessoal, informática e escritório, entretenimento, eletrodomésticos e outros equipamentos" loading="lazy">
-        </figure>
-
-        <div class="stat-grid" style="margin-top: 28px;">
-            <div class="stat-card c-pbc">
-                <div><strong>Linha marrom</strong></div>
-                <div class="label">TVs, monitores, caixas de som, aparelhos de som e videogames.</div>
-            </div>
-
-            <div class="stat-card c-copper">
-                <div><strong>Linha branca</strong></div>
-                <div class="label">Geladeira, fogão elétrico, máquina de lavar, micro-ondas e ar-condicionado.</div>
-            </div>
-
-            <div class="stat-card c-hazard">
-                <div><strong>Linha verde</strong></div>
-                <div class="label">Celulares, notebooks, tablets, impressoras, roteadores e periféricos.</div>
-            </div>
-
-            <div class="stat-card c-steel">
-                <div><strong>Linha azul</strong></div>
-                <div class="label">Liquidificador, batedeira, ventilador, secador e ferramentas elétricas.</div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= GALERIA ================= -->
-<section id="galeria">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Registro</p>
-            <h2>O caminho do material</h2>
-            <p>
-                Registros feitos pela equipe do projeto: o percurso do equipamento desde a chegada ao galpão até a
-                separação dos metais que voltam para a indústria.
-            </p>
-        </div>
-
-        <div class="galeria-grid">
-            <div class="galeria-card">
-                <img src="imagem/01-recebimento.jpg" alt="Contentor metálico e sacos acumulados com equipamentos eletrônicos recebidos" loading="lazy">
-                <div class="galeria-content">
-                    <h3>O ponto de chegada</h3>
-                    <p>É aqui que o aparelho descartado corretamente termina: acumulado para triagem, e não no aterro.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card">
-                <img src="imagem/02-triagem.jpg" alt="Prateleiras do galpão com telas e monitores embalados e caixas plásticas organizadas" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Separado por tipo</h3>
-                    <p>Telas, caixas e componentes ficam divididos por categoria — cada grupo segue um tratamento diferente.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card">
-                <img src="imagem/03-desmontagem.jpg" alt="Trabalhador desmontando equipamentos eletrônicos em bancada com ferramentas" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Desmontagem manual</h3>
-                    <p>Boa parte do trabalho é feita peça por peça, com ferramenta na mão, para não perder material.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card">
-                <img src="imagem/04-celulares.jpg" alt="Celulares e discos rígidos abertos sobre a bancada durante a desmontagem" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Celulares abertos</h3>
-                    <p>O aparelho que ficou anos na gaveta vira bateria, tela, carcaça e placa — cada um com um destino.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card">
-                <img src="imagem/05-placas.jpg" alt="Placas de circuito impresso verdes e azuis separadas para recuperação de metais" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Onde estão os metais</h3>
-                    <p>As placas concentram o cobre das trilhas, o estanho das soldas e o ouro dos contatos.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card destaque-final">
-                <img src="imagem/06-bigbag.jpg" alt="Big bag cheio de placas de circuito prontas para envio à recuperação de metais" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Matéria-prima de novo</h3>
-                    <p>Um big bag inteiro de placas pronto para seguir à recuperação. Nenhum grama disso precisou sair de uma mina.</p>
-                </div>
-            </div>
-
-            <div class="galeria-card destaque-final">
-                <img src="imagem/WhatsApp Image 2026-09-19 at 09.40.35.jpeg" alt="Caminhonete da ReciTech carregada com equipamentos eletrônicos recolhidos, estacionada em frente ao galpão de reciclagem" loading="lazy">
-                <div class="galeria-content">
-                    <h3>Ponto de coleta ReciTech</h3>
-                    <p>A ReciTech  é ponto de descarte e triagem do material.</p>
-                </div>
-            </div>
-        </div>
- 
-        <div class="endereco-card"><br>
-            <p><strong>Onde fica</strong></p>
-            <h3>ReciTech — reciclagem de equipamentos tecnológicos</h3>
-            <p>
-                Rua Engenheiro Heinz Marth, 1708 — Santa Felicidade, Cascavel - PR
-            </p>
-        </div>
- 
-        <div class="mapa-wrap">
-            <iframe
-                src="https://www.google.com/maps?q=Rua+Engenheiro+Heinz+Marth,+1708,+Santa+Felicidade,+Cascavel+-+PR&output=embed"
-                width="100%"
-                height="360"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Mapa até a ReciTech — Rua Engenheiro Heinz Marth, 1708, Santa Felicidade, Cascavel - PR">
-            </iframe>
-            <a href="https://www.google.com/maps/place/R.+Eng.+Heinz+Marth,+1708+-+Santa+Felicidade,+Cascavel+-+PR,+85803-400/@-24.9974473,-53.4694084,17z/data=!3m1!4b1!4m6!3m5!1s0x94f3d5dab73cbc29:0x9453f13c200fa6ac!8m2!3d-24.9974522!4d-53.4668335!16s%2Fg%2F11pkb1qflm?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Abrir no maps</a>
-        </div>
-    </div>
-</div>
-</div>
-</section>
-
-
-<!-- ================= DESCARTE CONSCIENTE ================= -->
-<section id="descarte">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Descarte consciente</p>
-            <h2>Como descartar?</h2>
-            <p>
-                Os números mostram o tamanho do desafio no Brasil e também o quanto ainda pode ser recuperado.
-            </p>
-        </div>
-
-        <div class="stat-grid">
-            <div class="stat-card c-pbc">
-                <div class="num"></div>
-                <div class="label">
-                    <strong>2,4 milhões t</strong> geradas por ano no
-                    <span class="fonte-ref" tabindex="0" data-fonte="Global E-waste Monitor (ONU/UNITAR), citado por veículos nacionais: o Brasil gera cerca de 2,4 milhões de toneladas de e-lixo por ano.">Brasil</span>.
-                </div>
-            </div>
-
-            <div class="stat-card c-copper">
-                <div class="num"></div>
-                <div class="label">
-                   <strong>5º lugar</strong> entre os países que mais geram e-lixo no mundo e 2º nas Américas.
-                </div>
-            </div>
-
-            <div class="stat-card c-hazard">
-                <div class="num"></div>
-                <div class="label">
-                   <strong>3% é</strong> a parcela
-                    <span class="fonte-ref" tabindex="0" data-fonte="Reportagem do Brasil de Fato com base em dados de logística reversa: cerca de 3% do lixo eletrônico brasileiro é descartado corretamente.">descartada corretamente</span>
-                    no país.
-                </div>
-            </div>
-
-            <div class="stat-card c-steel">
-                <div class="num">82 milhões t</div>
-                <div class="label">
-                    é a projeção de e-lixo gerado no mundo até 2030.
-                </div>
-            </div>
-        </div>
-
-        <div class="two-col" style="margin-top: 24px;">
-            <div class="card">
-                <h3>Onde encontrar um ponto de coleta</h3>
-                <p>
-                    Os dois mapas oficiais de logística reversa cobrem boa parte do país e funcionam por
-                    geolocalização: basta informar o endereço para ver o ponto mais próximo.
-                </p>
-                <ul class="lista-check">
-                    <li><a href="https://greeneletron.org.br/onde-descartar/" target="_blank" rel="noopener">Green Eletron — mapa de Pontos de Entrega Voluntária</a></li>
-                    <li><a href="https://abree.org.br/como-encontrar-locais-de-reciclagem-de-eletroeletronicos-perto-de-voce" target="_blank" rel="noopener">ABREE — pontos de recebimento em mais de 1,4 mil municípios</a></li>
-                    <li>Ecopontos e centrais de coleta seletiva da prefeitura</li>
-                    <li>Lojas de varejo com coletores próprios e ações do Beyond Collection</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Antes de entregar o aparelho</h3>
-                <ul class="lista-check">
-                    <li>Apague seus dados e faça a restauração de fábrica</li>
-                    <li>Retire o chip e o cartão de memória</li>
-                    <li>Separe cabos e carregadores junto com o aparelho</li>
-                    <li>Se ainda funciona, considere doar: o reuso vem antes da reciclagem</li>
-                    <li>Nunca descarte em lixo comum, calçadas ou terrenos baldios</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="hero-actions">
-            <a href="https://greeneletron.org.br/onde-descartar/" target="_blank" rel="noopener" class="btn btn-primary">Encontre um ponto de coleta</a>
-            <a href="#projeto" class="btn btn-ghost">Voltar ao projeto</a>
-        </div>
-    </div>
-</section>
-
-<section class="manifesto">
-    <div class="wrap">
-        <p class="eyebrow">Manifesto</p>
-        <h2>Nenhum aparelho termina quando para de funcionar.</h2>
-        <p>
-            Ele termina quando ninguém mais sabe o que fazer com ele. Enquanto houver cobre nas trilhas, ouro nos
-            contatos e ferro na estrutura, existe um próximo uso possível. O Beyond Collection acredita que
-            informação é o que separa uma gaveta cheia de material eletrônico de um retorno à indústria — e que
-            descartar certo deveria ser tão simples quanto comprar.
-        </p>
-        <p class="assinatura">— Beyond Collection</p>
-    </div>
-</section>
-
-<!-- ================= REFERÊNCIAS ================= -->
-<section id="referencias" class="sec-surface">
-    <div class="wrap">
-        <div class="sec-head">
-            <p class="eyebrow">Fontes</p>
-            <h2>Referências</h2>
-            <p>Levantamento usado nos dados citados ao longo da página, em formato ABNT.</p>
-        </div>
-
-        <ul style="list-style: none; font-size: 14px; color: var(--ink-soft); line-height: 1.8;">
-            <li style="margin-bottom: 10px;">
-                EARTHWORKS. <em>Environmental Impacts of Gold Mining</em>. Washington, DC: Earthworks, 2023.
-                Disponível em: earthworks.org. Acesso em: 15 set. 2026.
-            </li>
-            <li style="margin-bottom: 10px;">
-                EARTHWORKS. <em>How the 20 tons of mine waste per gold ring figure was calculated</em>.
-                Washington, DC: Earthworks, [2023]. Disponível em: earthworks.org. Acesso em: 15 set. 2026.
-            </li>
-            <li style="margin-bottom: 10px;">
-                INTERNATIONAL TELECOMMUNICATION UNION (ITU). <em>Global E-waste Monitor 2020: e-waste rising five
-                times faster than documented e-waste recycling</em>. Genebra: ITU, 2020. Disponível em: itu.int.
-                Acesso em: 15 set. 2026.
-            </li>
-            <li>
-                UNITED NATIONS UNIVERSITY (UNU); UNITED NATIONS INSTITUTE FOR TRAINING AND RESEARCH (UNITAR).
-                <em>The Global E-waste Monitor 2024</em>. Geneva/Bonn: UNU/UNITAR, 2024. Disponível em:
-                ewastemonitor.info. Acesso em: 15 set. 2026.
-            </li>
-        </ul>
-    </div>
-</section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-    <div class="wrap">
-        <p style="text-align: center;"><strong>Beyond Collection</strong> — o descarte não é o fim.</p>
-        <p class="rodape-nota">
-            Dados: Global E-waste Monitor 2024 (ONU/UNITAR/UIT), ABREE e Green Eletron.
-            Campanha de conscientização sobre resíduos eletroeletrônicos.
-        </p>
-    </div>
-</footer>
-
-<script>
-// Marca no menu a seção que está visível na tela
-(function () {
-    const links = document.querySelectorAll('.nav-menu a[href^="#"]');
-    const sections = [];
-
-    links.forEach(function (link) {
-        const alvo = document.querySelector(link.getAttribute('href'));
-        if (alvo) sections.push({ link: link, alvo: alvo });
-    });
-
-    function atualizar() {
-        const posicao = window.scrollY + 140;
-        let atual = null;
-
-        sections.forEach(function (item) {
-            if (item.alvo.offsetTop <= posicao) atual = item;
-        });
-
-        links.forEach(function (link) { link.classList.remove('active'); });
-        if (atual) atual.link.classList.add('active');
-    }
-
-    window.addEventListener('scroll', atualizar, { passive: true });
-    window.addEventListener('resize', atualizar);
-    atualizar();
-})();
-
-// Menu hambúrguer (mobile)
-(function () {
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    if (!toggle || !menu) return;
-
-    function fechar() {
-        menu.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-    }
-
-    function alternar() {
-        const aberto = menu.classList.toggle('open');
-        toggle.classList.toggle('open', aberto);
-        toggle.setAttribute('aria-expanded', String(aberto));
-    }
-
-    toggle.addEventListener('click', alternar);
-
-    // fecha o menu ao clicar em um link
-    menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', fechar);
-    });
-
-    // fecha o menu se a tela for redimensionada para o layout desktop
-    window.addEventListener('resize', function () {
-        if (window.innerWidth > 900) fechar();
-    });
-})();
-</script>
-
+    <!-- JS Externo -->
+    <script src="script.js"></script>
 </body>
 </html>
