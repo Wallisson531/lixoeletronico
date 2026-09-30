@@ -9,7 +9,7 @@
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,38 +22,44 @@
     <!-- 1. HEADER / MENU DE NAVEGAÇÃO FIXO -->
     <header class="site-header">
         <div class="header-container">
-            <a href="#inicio" class="brand-logo">
-                <div class="brand-icon">
-                    <i data-lucide="recycle"></i>
-                </div>
-                <div class="brand-text">
-                    <span class="brand-subtitle">Projeto</span>
-                    <span class="brand-title">Beyond Collection</span>
-                </div>
+            <a href="#inicio" class="brand-logo" aria-label="Beyond Collection - início">
+                Beyond<br>Collection
             </a>
 
             <nav class="main-nav" aria-label="Navegação principal">
-                <a href="#inicio">Início</a>
-                <a href="#descarte">Onde Descartar</a>
-                <a href="#equipamentos">Equipamentos</a>
-                <a href="#exemplos">Exemplos</a>
-                <a href="#lixo-eletronico">Pesquisa</a>
-                <a href="#materiais">Materiais</a>
-                <a href="#galeria">Galeria</a>
-            </nav>
-
-            <div class="header-actions">
-                <!-- Botão Alternador de Modo Claro/Escuro -->
-                <button id="theme-toggle" aria-label="Alternar tema" class="theme-toggle-btn">
-                    <i id="theme-icon-sun" data-lucide="sun" class="icon-sun"></i>
-                    <i id="theme-icon-moon" data-lucide="moon" class="icon-moon"></i>
-                </button>
-
-                <a href="#descarte" class="btn btn-primary btn-header">
-                    <i data-lucide="map-pin"></i>
-                    Encontrar Ponto
+                <a href="#descarte" class="nav-item active">
+                    <svg class="nav-pin" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="currentColor"/>
+                        <circle cx="12" cy="10" r="2.6" fill="#ffffff"/>
+                    </svg>
+                    <span>Onde descartar</span>
                 </a>
-            </div>
+
+                <a href="#galeria" class="nav-item">
+                    <i data-lucide="handshake"></i>
+                    <span>Empresa Parceira</span>
+                </a>
+
+                <a href="#exemplos" class="nav-item">
+                    <i data-lucide="cpu"></i>
+                    <span>Exemplos de<br>Eletrônicos</span>
+                </a>
+
+                <a href="#materiais" class="nav-item">
+                    <i data-lucide="leaf"></i>
+                    <span>Matéria-Prima<br>Recuperada</span>
+                </a>
+
+                <a href="#lixo-eletronico" class="nav-item">
+                    <i data-lucide="globe"></i>
+                    <span>Poluição<br>Ambiental</span>
+                </a>
+
+                <a href="#caminho-material" class="nav-item">
+                    <i data-lucide="mountain-snow"></i>
+                    <span>Mineração<br>Urbana</span>
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -61,85 +67,54 @@
 
         <!-- 2. HERO SECTION -->
         <section id="inicio" class="hero-section">
-            <div class="glow-effect glow-left"></div>
-            <div class="glow-effect glow-right"></div>
-
             <div class="hero-container">
-                <div class="hero-text-content">
-                    <div class="hero-badge">
-                        <i data-lucide="sparkles"></i>Projeto · Beyond Collection
-                    </div>
 
-                    <h1 class="hero-title">
-                        O Descarte não é o fim.<br>
-                        <span class="gradient-text">
-                            É o início de uma nova possibilidade.
-                        </span>
-                    </h1>
+                <p class="hero-eyebrow">
+                    Beyond Collection <span class="eyebrow-sep">|</span> Projeto de conscientização
+                </p>
 
-                    <p class="hero-description">
-                        Vivemos em uma sociedade cada vez mais conectada. Celulares, computadores, videogames, eletrodomésticos e outros equipamentos eletrônicos fazem parte da nossa rotina. Mas existe uma pergunta que ainda precisa ser feita:<br>
-                        <strong>
-                            O que acontece com esses equipamentos quando deixam de ser utilizados?
-                        </strong>
-                    </p>
+                <h1 class="hero-title">
+                    O Descarte não é o fim.
+                    <span class="hero-title-sub">É o início de uma nova possibilidade.</span>
+                </h1>
 
-                    <!-- Busca Direta no Hero -->
-                    <div class="hero-search-card">
-                        <form id="hero-search-form" class="hero-search-form">
-                            <div class="input-group">
-                                <i data-lucide="search" class="input-icon"></i>
-                                <input type="text" id="hero-search-input" placeholder="Digite sua cidade ou CEP..." class="form-input">
+                <div class="hero-cards">
+                    <a href="#lixo-eletronico" class="hero-card">
+                        <div class="hero-card-icon">
+                            <div class="icon-stack">
+                                <i data-lucide="laptop" class="icon-laptop"></i>
+                                <i data-lucide="recycle" class="icon-recycle"></i>
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                Localizar
-                                <i data-lucide="arrow-right"></i>
-                            </button>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="hero-card-divider"></div>
+                        <div class="hero-card-text">
+                            <h2>O que é<br>lixo eletrônico?</h2>
+                            <p>Entenda o que são, quais equipamentos entram nessa categoria e por que o descarte correto é importante.</p>
+                        </div>
+                        <span class="hero-card-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
 
-                    <div class="hero-cta-group">
-                        <a href="#projeto" class="btn btn-secondary">Conheça o projeto</a>
-                        <a href="#descarte" class="btn btn-primary">Encontrar um ponto de coleta</a>
-                    </div>
+                    <a href="#descarte" class="hero-card">
+                        <div class="hero-card-icon">
+                            <svg class="card-pin" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="currentColor"/>
+                                <circle cx="12" cy="10" r="2.6" fill="#ffffff"/>
+                            </svg>
+                        </div>
+                        <div class="hero-card-divider"></div>
+                        <div class="hero-card-text">
+                            <h2>Pontos de<br>descarte eletrônico</h2>
+                            <p>Encontre locais seguros e responsáveis para descartar seus equipamentos eletrônicos.</p>
+                        </div>
+                        <span class="hero-card-arrow"><i data-lucide="arrow-right"></i></span>
+                    </a>
                 </div>
 
-                <!-- Elemento Visual Interativo -->
-                <!-- Elemento Visual Interativo -->
-            <div class="hero-interactive-container">
-                <div class="interactive-card" id="interactive-card">
-                    <div class="card-tag">
-                        Mineração Urbana Adormecida
-                    </div>
+                <a href="#projeto" class="btn-project">
+                    Conheça o projeto
+                    <i data-lucide="arrow-right"></i>
+                </a>
 
-                    <div class="card-icon-wrapper" id="card-icon-wrapper">
-                        <i data-lucide="smartphone" class="icon-main" id="icon-main"></i>
-                        <i data-lucide="cpu" class="icon-floating"></i>
-                    </div>
-
-                    <h3 class="card-title">Composição dos Equipamentos</h3>
-                    <p class="card-subtitle" id="metal-info-desc">Passe o cursor sobre os metais abaixo para identificar a aplicação:</p>
-
-                    <div class="metals-grid">
-                        <div class="metal-card metal-interactive" data-metal="gold">
-                            <span class="metal-name text-gold">Ouro (Au)</span>
-                            <span class="metal-usage">Contatos</span>
-                        </div>
-                        <div class="metal-card metal-interactive" data-metal="copper">
-                            <span class="metal-name text-copper">Cobre (Cu)</span>
-                            <span class="metal-usage">Fiação</span>
-                        </div>
-                        <div class="metal-card metal-interactive" data-metal="silver">
-                            <span class="metal-name text-silver">Prata (Ag)</span>
-                            <span class="metal-usage">Relés</span>
-                        </div>
-                    </div>
-
-                    <!-- Tooltip/Caixa de informação dinâmica -->
-                    <div class="metal-detail-box" id="metal-detail-box">
-                        Selecione ou passe o mouse em um metal para ver detalhes.
-                    </div>
-                </div>
             </div>
         </section>
 
