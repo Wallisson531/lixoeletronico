@@ -265,6 +265,40 @@ html.dark .btn-primary { color: #020617; }
 
 .nav-item.active svg { color: var(--brand-dark); }
 
+/* Botão de modo claro / escuro */
+.theme-toggle-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line-soft);
+    background-color: var(--brand-soft);
+    color: var(--brand-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn:focus-visible {
+    outline: 2px solid var(--brand-dark);
+    outline-offset: 2px;
+}
+
+.theme-toggle-btn svg { width: 22px; height: 22px; }
+
+/* Lua no modo claro, sol no modo escuro */
+.icon-sun { display: none; }
+.icon-moon { display: block; }
+html.dark .icon-sun { display: block; }
+html.dark .icon-moon { display: none; }
+
 /* ==========================================================================
    HERO (novo visual)
    ========================================================================== */
