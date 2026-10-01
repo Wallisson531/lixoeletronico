@@ -741,6 +741,73 @@ html.dark .exemplos-banner {
 .step-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .step-description { font-size: 0.8rem; color: var(--text-secondary); }
 
+/* SEÇÃO PESQUISA: "O QUE É LIXO ELETRÔNICO?" */
+.research-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 24px;
+    padding: 40px 48px;
+    margin-bottom: 20px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.research-pill {
+    display: inline-block;
+    padding: 8px 22px;
+    border-radius: 50px;
+    background-color: #b9f0d6;
+    color: #0d5c36;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+html.dark .research-pill { background-color: var(--brand-soft); color: var(--brand-dark); }
+
+.research-title {
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4.6vw, 3.9rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin-bottom: 22px;
+}
+
+.research-desc {
+    font-size: clamp(1.05rem, 1.9vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--text-secondary);
+    max-width: 30ch;
+}
+
+.research-desc strong { color: #16a36a; font-weight: 700; }
+html.dark .research-desc strong { color: var(--primary); }
+
+.research-photo {
+    background-color: #ffffff;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.research-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+@media (max-width: 900px) {
+    .research-intro { grid-template-columns: 1fr; padding: 28px 22px; }
+    .research-desc { max-width: none; }
+}
+
 /* INFOGRÁFICOS E TABELAS */
 .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
 .stat-card { background-color: var(--bg-main); border: 1px solid var(--border-color); padding: 24px; border-radius: var(--radius-lg); }
